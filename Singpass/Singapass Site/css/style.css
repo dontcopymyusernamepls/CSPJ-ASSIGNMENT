@@ -313,7 +313,7 @@
 
 /*** Footer ***/
 .footer {
-    background: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .9)), url(../img/carousel-bg-1.jpg) center center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .9)), url(../img/Hero_landing_desktop.png) center center no-repeat;
     background-size: cover;
 }
 
@@ -363,6 +363,7 @@
     padding: 25px 0;
     font-size: 15px;
     border-top: 1px solid rgba(256, 256, 256, .1);
+    position: relative; left: 950px; bottom: 250px;
 }
 
 .footer .copyright a {
@@ -379,4 +380,30 @@
     margin-right: 0;
     padding-right: 0;
     border-right: none;
+}
+
+/** Login in **/
+.logo{
+    position:relative; left: 10px;
+}
+
+.sublogo {
+    position:relative; left: 1200px; bottom: 50px;
+
+} 
+.mascot{
+    position:relative; top: 250px;left: 10px;
+}
+.mascot .h2{
+    position: relative; left: 50px;
+}
+.login{
+    width: 382px;
+    overflow: hidden;
+    margin: auto;
+    margin: 20 0 0 450px;
+    padding: 80px;
+    background: #17020215;
+    border-radius: 30px ;
+    position: relative; left: 450px;
 }

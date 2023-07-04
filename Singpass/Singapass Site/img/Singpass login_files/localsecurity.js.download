@@ -1,0 +1,2779 @@
+function des(b, d, h, k, n, m) {
+  var p = [
+      16843776,
+      0,
+      65536,
+      16843780,
+      16842756,
+      66564,
+      4,
+      65536,
+      1024,
+      16843776,
+      16843780,
+      1024,
+      16778244,
+      16842756,
+      16777216,
+      4,
+      1028,
+      16778240,
+      16778240,
+      66560,
+      66560,
+      16842752,
+      16842752,
+      16778244,
+      65540,
+      16777220,
+      16777220,
+      65540,
+      0,
+      1028,
+      66564,
+      16777216,
+      65536,
+      16843780,
+      4,
+      16842752,
+      16843776,
+      16777216,
+      16777216,
+      1024,
+      16842756,
+      65536,
+      66560,
+      16777220,
+      1024,
+      4,
+      16778244,
+      66564,
+      16843780,
+      65540,
+      16842752,
+      16778244,
+      16777220,
+      1028,
+      66564,
+      16843776,
+      1028,
+      16778240,
+      16778240,
+      0,
+      65540,
+      66560,
+      0,
+      16842756,
+    ],
+    q = [
+      -2146402272,
+      -2147450880,
+      32768,
+      1081376,
+      1048576,
+      32,
+      -2146435040,
+      -2147450848,
+      -2147483616,
+      -2146402272,
+      -2146402304,
+      -2147483648,
+      -2147450880,
+      1048576,
+      32,
+      -2146435040,
+      1081344,
+      1048608,
+      -2147450848,
+      0,
+      -2147483648,
+      32768,
+      1081376,
+      -2146435072,
+      1048608,
+      -2147483616,
+      0,
+      1081344,
+      32800,
+      -2146402304,
+      -2146435072,
+      32800,
+      0,
+      1081376,
+      -2146435040,
+      1048576,
+      -2147450848,
+      -2146435072,
+      -2146402304,
+      32768,
+      -2146435072,
+      -2147450880,
+      32,
+      -2146402272,
+      1081376,
+      32,
+      32768,
+      -2147483648,
+      32800,
+      -2146402304,
+      1048576,
+      -2147483616,
+      1048608,
+      -2147450848,
+      -2147483616,
+      1048608,
+      1081344,
+      0,
+      -2147450880,
+      32800,
+      -2147483648,
+      -2146435040,
+      -2146402272,
+      1081344,
+    ],
+    r = [
+      520,
+      134349312,
+      0,
+      134348808,
+      134218240,
+      0,
+      131592,
+      134218240,
+      131080,
+      134217736,
+      134217736,
+      131072,
+      134349320,
+      131080,
+      134348800,
+      520,
+      134217728,
+      8,
+      134349312,
+      512,
+      131584,
+      134348800,
+      134348808,
+      131592,
+      134218248,
+      131584,
+      131072,
+      134218248,
+      8,
+      134349320,
+      512,
+      134217728,
+      134349312,
+      134217728,
+      131080,
+      520,
+      131072,
+      134349312,
+      134218240,
+      0,
+      512,
+      131080,
+      134349320,
+      134218240,
+      134217736,
+      512,
+      0,
+      134348808,
+      134218248,
+      131072,
+      134217728,
+      134349320,
+      8,
+      131592,
+      131584,
+      134217736,
+      134348800,
+      134218248,
+      520,
+      134348800,
+      131592,
+      8,
+      134348808,
+      131584,
+    ],
+    x = [
+      8396801,
+      8321,
+      8321,
+      128,
+      8396928,
+      8388737,
+      8388609,
+      8193,
+      0,
+      8396800,
+      8396800,
+      8396929,
+      129,
+      0,
+      8388736,
+      8388609,
+      1,
+      8192,
+      8388608,
+      8396801,
+      128,
+      8388608,
+      8193,
+      8320,
+      8388737,
+      1,
+      8320,
+      8388736,
+      8192,
+      8396928,
+      8396929,
+      129,
+      8388736,
+      8388609,
+      8396800,
+      8396929,
+      129,
+      0,
+      0,
+      8396800,
+      8320,
+      8388736,
+      8388737,
+      1,
+      8396801,
+      8321,
+      8321,
+      128,
+      8396929,
+      129,
+      1,
+      8192,
+      8388609,
+      8193,
+      8396928,
+      8388737,
+      8193,
+      8320,
+      8388608,
+      8396801,
+      128,
+      8388608,
+      8192,
+      8396928,
+    ],
+    B = [
+      256,
+      34078976,
+      34078720,
+      1107296512,
+      524288,
+      256,
+      1073741824,
+      34078720,
+      1074266368,
+      524288,
+      33554688,
+      1074266368,
+      1107296512,
+      1107820544,
+      524544,
+      1073741824,
+      33554432,
+      1074266112,
+      1074266112,
+      0,
+      1073742080,
+      1107820800,
+      1107820800,
+      33554688,
+      1107820544,
+      1073742080,
+      0,
+      1107296256,
+      34078976,
+      33554432,
+      1107296256,
+      524544,
+      524288,
+      1107296512,
+      256,
+      33554432,
+      1073741824,
+      34078720,
+      1107296512,
+      1074266368,
+      33554688,
+      1073741824,
+      1107820544,
+      34078976,
+      1074266368,
+      256,
+      33554432,
+      1107820544,
+      1107820800,
+      524544,
+      1107296256,
+      1107820800,
+      34078720,
+      0,
+      1074266112,
+      1107296256,
+      524544,
+      33554688,
+      1073742080,
+      524288,
+      0,
+      1074266112,
+      34078976,
+      1073742080,
+    ],
+    w = [
+      536870928,
+      541065216,
+      16384,
+      541081616,
+      541065216,
+      16,
+      541081616,
+      4194304,
+      536887296,
+      4210704,
+      4194304,
+      536870928,
+      4194320,
+      536887296,
+      536870912,
+      16400,
+      0,
+      4194320,
+      536887312,
+      16384,
+      4210688,
+      536887312,
+      16,
+      541065232,
+      541065232,
+      0,
+      4210704,
+      541081600,
+      16400,
+      4210688,
+      541081600,
+      536870912,
+      536887296,
+      16,
+      541065232,
+      4210688,
+      541081616,
+      4194304,
+      16400,
+      536870928,
+      4194304,
+      536887296,
+      536870912,
+      16400,
+      536870928,
+      541081616,
+      4210688,
+      541065216,
+      4210704,
+      541081600,
+      0,
+      541065232,
+      16,
+      16384,
+      541065216,
+      4210704,
+      16384,
+      4194320,
+      536887312,
+      0,
+      541081600,
+      536870912,
+      4194320,
+      536887312,
+    ],
+    A = [
+      2097152,
+      69206018,
+      67110914,
+      0,
+      2048,
+      67110914,
+      2099202,
+      69208064,
+      69208066,
+      2097152,
+      0,
+      67108866,
+      2,
+      67108864,
+      69206018,
+      2050,
+      67110912,
+      2099202,
+      2097154,
+      67110912,
+      67108866,
+      69206016,
+      69208064,
+      2097154,
+      69206016,
+      2048,
+      2050,
+      69208066,
+      2099200,
+      2,
+      67108864,
+      2099200,
+      67108864,
+      2099200,
+      2097152,
+      67110914,
+      67110914,
+      69206018,
+      69206018,
+      2,
+      2097154,
+      67108864,
+      67110912,
+      2097152,
+      69208064,
+      2050,
+      2099202,
+      69208064,
+      2050,
+      67108866,
+      69208066,
+      69206016,
+      2099200,
+      0,
+      2,
+      69208066,
+      0,
+      2099202,
+      69206016,
+      2048,
+      67108866,
+      67110912,
+      2048,
+      2097154,
+    ],
+    s = [
+      268439616,
+      4096,
+      262144,
+      268701760,
+      268435456,
+      268439616,
+      64,
+      268435456,
+      262208,
+      268697600,
+      268701760,
+      266240,
+      268701696,
+      266304,
+      4096,
+      64,
+      268697600,
+      268435520,
+      268439552,
+      4160,
+      266240,
+      262208,
+      268697664,
+      268701696,
+      4160,
+      0,
+      0,
+      268697664,
+      268435520,
+      268439552,
+      266304,
+      262144,
+      266304,
+      262144,
+      268701696,
+      4096,
+      64,
+      268697664,
+      4096,
+      266304,
+      268439552,
+      64,
+      268435520,
+      268697600,
+      268697664,
+      268435456,
+      262144,
+      268439616,
+      0,
+      268701760,
+      262208,
+      268435520,
+      268697600,
+      268439552,
+      268439616,
+      0,
+      268701760,
+      266240,
+      266240,
+      4160,
+      4160,
+      262208,
+      268435456,
+      268701696,
+    ];
+  b = des_createKeys(b);
+  var v = 0,
+    y,
+    C,
+    F,
+    t,
+    u,
+    E,
+    G,
+    D,
+    z,
+    H,
+    I,
+    L,
+    J = d.length,
+    K = 0,
+    M = 32 == b.length ? 3 : 9;
+  E =
+    3 == M
+      ? h
+        ? [0, 32, 2]
+        : [30, -2, -2]
+      : h
+      ? [0, 32, 2, 62, 30, -2, 64, 96, 2]
+      : [94, 62, -2, 32, 64, 2, 30, -2, -2];
+  2 == m
+    ? (d += "        ")
+    : 1 == m
+    ? ((m = 8 - (J % 8)),
+      (d += String.fromCharCode(m, m, m, m, m, m, m, m)),
+      8 == m && (J += 8))
+    : m || (d += "\x00\x00\x00\x00\x00\x00\x00\x00");
+  tempresult = result = "";
+  for (
+    1 == k &&
+    ((G =
+      (n.charCodeAt(v++) << 24) |
+      (n.charCodeAt(v++) << 16) |
+      (n.charCodeAt(v++) << 8) |
+      n.charCodeAt(v++)),
+    (z =
+      (n.charCodeAt(v++) << 24) |
+      (n.charCodeAt(v++) << 16) |
+      (n.charCodeAt(v++) << 8) |
+      n.charCodeAt(v++)),
+    (v = 0));
+    v < J;
+
+  ) {
+    t =
+      (d.charCodeAt(v++) << 24) |
+      (d.charCodeAt(v++) << 16) |
+      (d.charCodeAt(v++) << 8) |
+      d.charCodeAt(v++);
+    u =
+      (d.charCodeAt(v++) << 24) |
+      (d.charCodeAt(v++) << 16) |
+      (d.charCodeAt(v++) << 8) |
+      d.charCodeAt(v++);
+    1 == k && (h ? ((t ^= G), (u ^= z)) : ((D = G), (H = z), (G = t), (z = u)));
+    m = ((t >>> 4) ^ u) & 252645135;
+    u ^= m;
+    t ^= m << 4;
+    m = ((t >>> 16) ^ u) & 65535;
+    u ^= m;
+    t ^= m << 16;
+    m = ((u >>> 2) ^ t) & 858993459;
+    t ^= m;
+    u ^= m << 2;
+    m = ((u >>> 8) ^ t) & 16711935;
+    t ^= m;
+    u ^= m << 8;
+    m = ((t >>> 1) ^ u) & 1431655765;
+    u ^= m;
+    t ^= m << 1;
+    t = (t << 1) | (t >>> 31);
+    u = (u << 1) | (u >>> 31);
+    for (y = 0; y < M; y += 3) {
+      I = E[y + 1];
+      L = E[y + 2];
+      for (n = E[y]; n != I; n += L)
+        (C = u ^ b[n]),
+          (F = ((u >>> 4) | (u << 28)) ^ b[n + 1]),
+          (m = t),
+          (t = u),
+          (u =
+            m ^
+            (q[(C >>> 24) & 63] |
+              x[(C >>> 16) & 63] |
+              w[(C >>> 8) & 63] |
+              s[C & 63] |
+              p[(F >>> 24) & 63] |
+              r[(F >>> 16) & 63] |
+              B[(F >>> 8) & 63] |
+              A[F & 63]));
+      m = t;
+      t = u;
+      u = m;
+    }
+    t = (t >>> 1) | (t << 31);
+    u = (u >>> 1) | (u << 31);
+    m = ((t >>> 1) ^ u) & 1431655765;
+    u ^= m;
+    t ^= m << 1;
+    m = ((u >>> 8) ^ t) & 16711935;
+    t ^= m;
+    u ^= m << 8;
+    m = ((u >>> 2) ^ t) & 858993459;
+    t ^= m;
+    u ^= m << 2;
+    m = ((t >>> 16) ^ u) & 65535;
+    u ^= m;
+    t ^= m << 16;
+    m = ((t >>> 4) ^ u) & 252645135;
+    u ^= m;
+    t ^= m << 4;
+    1 == k && (h ? ((G = t), (z = u)) : ((t ^= D), (u ^= H)));
+    tempresult += String.fromCharCode(
+      t >>> 24,
+      (t >>> 16) & 255,
+      (t >>> 8) & 255,
+      t & 255,
+      u >>> 24,
+      (u >>> 16) & 255,
+      (u >>> 8) & 255,
+      u & 255
+    );
+    K += 8;
+    512 == K && ((result += tempresult), (tempresult = ""), (K = 0));
+  }
+  return result + tempresult;
+}
+function des_createKeys(b) {
+  pc2bytes0 = [
+    0,
+    4,
+    536870912,
+    536870916,
+    65536,
+    65540,
+    536936448,
+    536936452,
+    512,
+    516,
+    536871424,
+    536871428,
+    66048,
+    66052,
+    536936960,
+    536936964,
+  ];
+  pc2bytes1 = [
+    0,
+    1,
+    1048576,
+    1048577,
+    67108864,
+    67108865,
+    68157440,
+    68157441,
+    256,
+    257,
+    1048832,
+    1048833,
+    67109120,
+    67109121,
+    68157696,
+    68157697,
+  ];
+  pc2bytes2 = [
+    0,
+    8,
+    2048,
+    2056,
+    16777216,
+    16777224,
+    16779264,
+    16779272,
+    0,
+    8,
+    2048,
+    2056,
+    16777216,
+    16777224,
+    16779264,
+    16779272,
+  ];
+  pc2bytes3 = [
+    0,
+    2097152,
+    134217728,
+    136314880,
+    8192,
+    2105344,
+    134225920,
+    136323072,
+    131072,
+    2228224,
+    134348800,
+    136445952,
+    139264,
+    2236416,
+    134356992,
+    136454144,
+  ];
+  pc2bytes4 = [
+    0,
+    262144,
+    16,
+    262160,
+    0,
+    262144,
+    16,
+    262160,
+    4096,
+    266240,
+    4112,
+    266256,
+    4096,
+    266240,
+    4112,
+    266256,
+  ];
+  pc2bytes5 = [
+    0,
+    1024,
+    32,
+    1056,
+    0,
+    1024,
+    32,
+    1056,
+    33554432,
+    33555456,
+    33554464,
+    33555488,
+    33554432,
+    33555456,
+    33554464,
+    33555488,
+  ];
+  pc2bytes6 = [
+    0,
+    268435456,
+    524288,
+    268959744,
+    2,
+    268435458,
+    524290,
+    268959746,
+    0,
+    268435456,
+    524288,
+    268959744,
+    2,
+    268435458,
+    524290,
+    268959746,
+  ];
+  pc2bytes7 = [
+    0,
+    65536,
+    2048,
+    67584,
+    536870912,
+    536936448,
+    536872960,
+    536938496,
+    131072,
+    196608,
+    133120,
+    198656,
+    537001984,
+    537067520,
+    537004032,
+    537069568,
+  ];
+  pc2bytes8 = [
+    0,
+    262144,
+    0,
+    262144,
+    2,
+    262146,
+    2,
+    262146,
+    33554432,
+    33816576,
+    33554432,
+    33816576,
+    33554434,
+    33816578,
+    33554434,
+    33816578,
+  ];
+  pc2bytes9 = [
+    0,
+    268435456,
+    8,
+    268435464,
+    0,
+    268435456,
+    8,
+    268435464,
+    1024,
+    268436480,
+    1032,
+    268436488,
+    1024,
+    268436480,
+    1032,
+    268436488,
+  ];
+  pc2bytes10 = [
+    0,
+    32,
+    0,
+    32,
+    1048576,
+    1048608,
+    1048576,
+    1048608,
+    8192,
+    8224,
+    8192,
+    8224,
+    1056768,
+    1056800,
+    1056768,
+    1056800,
+  ];
+  pc2bytes11 = [
+    0,
+    16777216,
+    512,
+    16777728,
+    2097152,
+    18874368,
+    2097664,
+    18874880,
+    67108864,
+    83886080,
+    67109376,
+    83886592,
+    69206016,
+    85983232,
+    69206528,
+    85983744,
+  ];
+  pc2bytes12 = [
+    0,
+    4096,
+    134217728,
+    134221824,
+    524288,
+    528384,
+    134742016,
+    134746112,
+    16,
+    4112,
+    134217744,
+    134221840,
+    524304,
+    528400,
+    134742032,
+    134746128,
+  ];
+  pc2bytes13 = [0, 4, 256, 260, 0, 4, 256, 260, 1, 5, 257, 261, 1, 5, 257, 261];
+  for (
+    var d = 8 < b.length ? 3 : 1,
+      h = Array(32 * d),
+      k = [0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0],
+      n,
+      m,
+      p = 0,
+      q = 0,
+      r,
+      x = 0;
+    x < d;
+    x++
+  )
+    for (
+      left =
+        (b.charCodeAt(p++) << 24) |
+        (b.charCodeAt(p++) << 16) |
+        (b.charCodeAt(p++) << 8) |
+        b.charCodeAt(p++),
+        right =
+          (b.charCodeAt(p++) << 24) |
+          (b.charCodeAt(p++) << 16) |
+          (b.charCodeAt(p++) << 8) |
+          b.charCodeAt(p++),
+        r = ((left >>> 4) ^ right) & 252645135,
+        right ^= r,
+        left ^= r << 4,
+        r = ((right >>> -16) ^ left) & 65535,
+        left ^= r,
+        right ^= r << -16,
+        r = ((left >>> 2) ^ right) & 858993459,
+        right ^= r,
+        left ^= r << 2,
+        r = ((right >>> -16) ^ left) & 65535,
+        left ^= r,
+        right ^= r << -16,
+        r = ((left >>> 1) ^ right) & 1431655765,
+        right ^= r,
+        left ^= r << 1,
+        r = ((right >>> 8) ^ left) & 16711935,
+        left ^= r,
+        right ^= r << 8,
+        r = ((left >>> 1) ^ right) & 1431655765,
+        right ^= r,
+        left ^= r << 1,
+        r = (left << 8) | ((right >>> 20) & 240),
+        left =
+          (right << 24) |
+          ((right << 8) & 16711680) |
+          ((right >>> 8) & 65280) |
+          ((right >>> 24) & 240),
+        right = r,
+        i = 0;
+      i < k.length;
+      i++
+    )
+      k[i]
+        ? ((left = (left << 2) | (left >>> 26)),
+          (right = (right << 2) | (right >>> 26)))
+        : ((left = (left << 1) | (left >>> 27)),
+          (right = (right << 1) | (right >>> 27))),
+        (left &= -15),
+        (right &= -15),
+        (n =
+          pc2bytes0[left >>> 28] |
+          pc2bytes1[(left >>> 24) & 15] |
+          pc2bytes2[(left >>> 20) & 15] |
+          pc2bytes3[(left >>> 16) & 15] |
+          pc2bytes4[(left >>> 12) & 15] |
+          pc2bytes5[(left >>> 8) & 15] |
+          pc2bytes6[(left >>> 4) & 15]),
+        (m =
+          pc2bytes7[right >>> 28] |
+          pc2bytes8[(right >>> 24) & 15] |
+          pc2bytes9[(right >>> 20) & 15] |
+          pc2bytes10[(right >>> 16) & 15] |
+          pc2bytes11[(right >>> 12) & 15] |
+          pc2bytes12[(right >>> 8) & 15] |
+          pc2bytes13[(right >>> 4) & 15]),
+        (r = ((m >>> 16) ^ n) & 65535),
+        (h[q++] = n ^ r),
+        (h[q++] = m ^ (r << 16));
+  return h;
+}
+var Is2048 = !1;
+function stringToHex(b) {
+  for (var d = "", h = "0123456789abcdef".split(""), k = 0; k < b.length; k++)
+    d += h[b.charCodeAt(k) >> 4] + h[b.charCodeAt(k) & 15];
+  return d;
+}
+function encryptSetPwdNoVerifyRSABlockMD5(b, d, h, k, n) {
+  h = MD5(h + k);
+  h = new BigInteger(h, 16);
+  n = new BigInteger(n, 16);
+  h = h.xor(n);
+  n = "0210" + h.toString(16);
+  n = new BigInteger(n, 16);
+  h = new RSAKey();
+  h.setPublic(d, b);
+  512 == d.length && (Is2048 = !0);
+  return h.encrypt(n).toString(16);
+}
+function encryptSetPwdRSABlock256(b, d, h, k, n, m) {
+  h = doSHA256Hash(Util.getByteArray(h + k));
+  k = Array(16);
+  for (var p = 0; 16 > p; p++) k[p] = h[p] ^ h[p + 16];
+  h = new BigInteger(Util.toHexString(k), 16);
+  m = new BigInteger(m, 16);
+  h = h.xor(m);
+  m = "0210" + h.toString(16);
+  h = n.length.toString(16);
+  16 > n.length && (h = "0" + h);
+  n = new BigInteger(getByteArray(n));
+  n = "03" + h + n.toString(16);
+  n = new BigInteger(m + n, 16);
+  m = new RSAKey();
+  m.setPublic(d, b);
+  return m.encrypt(n).toString(16);
+}
+function encryptSetPwdNoVerifyRSABlock256(b, d, h, k, n) {
+  h = doSHA256Hash(Util.getByteArray(h + k));
+  k = Array(16);
+  for (var m = 0; 16 > m; m++) k[m] = h[m] ^ h[m + 16];
+  h = new BigInteger(Util.toHexString(k), 16);
+  n = new BigInteger(n, 16);
+  h = h.xor(n);
+  n = "0210" + h.toString(16);
+  n = new BigInteger(n, 16);
+  h = new RSAKey();
+  h.setPublic(d, b);
+  512 == d.length && (Is2048 = !0);
+  b = !0;
+  do
+    (d = h.encrypt(n).toString(16)),
+      !0 == Is2048 ? 512 == d.length && (b = !1) : 256 == d.length && (b = !1);
+  while (b);
+  return d;
+}
+function encryptSetPwdNoVerifyNoUserRSABlock256(b, d, h, k) {
+  c = doSHA256Hash(Util.getByteArray(h));
+  h = Array(16);
+  for (var n = 0; 16 > n; n++) h[n] = c[n] ^ c[n + 16];
+  c = new BigInteger(Util.toHexString(h), 16);
+  k = new BigInteger(k, 16);
+  c = c.xor(k);
+  k = "0210" + c.toString(16);
+  k = new BigInteger(k, 16);
+  c = new RSAKey();
+  c.setPublic(d, b);
+  512 == d.length && (Is2048 = !0);
+  b = !0;
+  do
+    (d = c.encrypt(k).toString(16)),
+      !0 == Is2048 ? 512 == d.length && (b = !1) : 256 == d.length && (b = !1);
+  while (b);
+  return d;
+}
+function encryptSetPwdNoVerifyNoUserRSABlock256U(b, d, h, k) {
+  hashedPasswordBytes = doSHA256Hash(Util.getByteArray(h));
+  c = new BigInteger(Util.toHexString(hashedPasswordBytes), 16);
+  g = new BigInteger(k, 16);
+  c = c.xor(g);
+  g = "0220" + c.toString(16);
+  g = new BigInteger(g, 16);
+  c = new RSAKey();
+  c.setPublic(d, b);
+  512 == d.length && (Is2048 = !0);
+  b = !0;
+  do
+    (d = c.encrypt(g).toString(16)),
+      !0 == Is2048 ? 512 == d.length && (b = !1) : 256 == d.length && (b = !1);
+  while (b);
+  return d;
+}
+function encryptSetPwdNoVerifyNoUserRSABlock512(b, d, h, k) {
+  hashedPassword = SHA512(h);
+  hashedPasswordHex = new BigInteger(hashedPassword, 16);
+  randomHex = new BigInteger(k, 16);
+  xorBytes = hashedPasswordHex.xor(randomHex);
+  payload = "0240" + xorBytes.toString(16);
+  finalPayload = new BigInteger(payload, 16);
+  c = new RSAKey();
+  c.setPublic(d, b);
+  512 == d.length && (Is2048 = !0);
+  b = !0;
+  do
+    (d = c.encrypt(finalPayload).toString(16)),
+      !0 == Is2048 ? 512 == d.length && (b = !1) : 256 == d.length && (b = !1);
+  while (b);
+  return d;
+}
+function encryptVerifyStaticRSABlockMD5(b, d, h, k, n) {
+  h = MD5(h + k);
+  h = new BigInteger(h, 16);
+  n = new BigInteger(n, 16);
+  h = h.xor(n);
+  n = new BigInteger("0110" + h.toString(16), 16);
+  h = new RSAKey();
+  h.setPublic(d, b);
+  512 == d.length && (Is2048 = !0);
+  return h.encrypt(n).toString(16);
+}
+function encryptVerifyStaticRSABlock256(b, d, h, k, n) {
+  h = doSHA256Hash(Util.getByteArray(h + k));
+  k = Array(16);
+  for (var m = 0; 16 > m; m++) k[m] = h[m] ^ h[m + 16];
+  h = new BigInteger(Util.toHexString(k), 16);
+  n = new BigInteger(n, 16);
+  h = h.xor(n);
+  n = new BigInteger("0110" + h.toString(16), 16);
+  h = new RSAKey();
+  h.setPublic(d, b);
+  512 == d.length && (Is2048 = !0);
+  b = !0;
+  do
+    (d = h.encrypt(n).toString(16)),
+      !0 == Is2048 ? 512 == d.length && (b = !1) : 256 == d.length && (b = !1);
+  while (b);
+  return d;
+}
+function encryptVerifyStaticNoUserRSABlock256(b, d, h, k) {
+  c = doSHA256Hash(Util.getByteArray(h));
+  h = Array(16);
+  for (var n = 0; 16 > n; n++) h[n] = c[n] ^ c[n + 16];
+  c = new BigInteger(Util.toHexString(h), 16);
+  k = new BigInteger(k, 16);
+  c = c.xor(k);
+  k = new BigInteger("0110" + c.toString(16), 16);
+  c = new RSAKey();
+  c.setPublic(d, b);
+  512 == d.length && (Is2048 = !0);
+  b = !0;
+  do
+    (d = c.encrypt(k).toString(16)),
+      !0 == Is2048 ? 512 == d.length && (b = !1) : 256 == d.length && (b = !1);
+  while (b);
+  return d;
+}
+function encryptVerifyStaticNoUserRSABlock256U(b, d, h, k) {
+  hashedPassword = doSHA256Hash(Util.getByteArray(h));
+  c = new BigInteger(Util.toHexString(hashedPassword), 16);
+  g = new BigInteger(k, 16);
+  c = c.xor(g);
+  g = new BigInteger("0120" + c.toString(16), 16);
+  c = new RSAKey();
+  c.setPublic(d, b);
+  512 == d.length && (Is2048 = !0);
+  b = !0;
+  do
+    (d = c.encrypt(g).toString(16)),
+      !0 == Is2048 ? 512 == d.length && (b = !1) : 256 == d.length && (b = !1);
+  while (b);
+  return d;
+}
+function encryptVerifyNoUserRSABlock256(b, d, h, k) {
+  c = doSHA256Hash(Util.getByteArray(h));
+  e = Array(16);
+  for (var n = 0; 16 > n; n++) e[n] = c[n] ^ c[n + 16];
+  c = new BigInteger(Util.toHexString(e), 16);
+  f = new BigInteger(k, 16);
+  c = c.xor(f);
+  f = h.length.toString(16);
+  16 > h.length && (f = "0" + f);
+  g = new BigInteger(getByteArray(h));
+  g = "03" + f + g.toString(16);
+  biTLVOTIP = new BigInteger(g, 16);
+  f = c.toString(16) + biTLVOTIP.toString(16);
+  g = new BigInteger("0110" + f, 16);
+  f = new RSAKey();
+  f.setPublic(d, b);
+  512 == d.length && (Is2048 = !0);
+  return f.encrypt(g).toString(16);
+}
+function encryptVerifyNoUserRSABlock256U(b, d, h, k) {
+  hashedPassword = doSHA256Hash(Util.getByteArray(h));
+  hashedPasswordHex = new BigInteger(Util.toHexString(hashedPassword), 16);
+  randomHex = new BigInteger(k, 16);
+  xorBytes = hashedPasswordHex.xor(hashedPasswordHex);
+  passwordLength = h.length.toString(16);
+  16 > h.length && (passwordLength = "0" + passwordLength);
+  passwordBytes = new BigInteger(getByteArray(h));
+  otpLoad = "03" + passwordLength + passwordBytes.toString(16);
+  biTLVOTIP = new BigInteger(otpLoad, 16);
+  payLoad = xorBytes.toString(16) + biTLVOTIP.toString(16);
+  finalPayload = new BigInteger("0120" + payLoad, 16);
+  f = new RSAKey();
+  f.setPublic(d, b);
+  512 == d.length && (Is2048 = !0);
+  do
+    (encryptedPwd = f.encrypt(finalPayload).toString(16)),
+      !0 == Is2048
+        ? 512 == encryptedPwd.length && (loop = !1)
+        : 256 == encryptedPwd.length && (loop = !1);
+  while (loop);
+  return encryptedPwd;
+}
+function encryptVerifyRSABlock256(b, d, h, k, n, m) {
+  h = doSHA256Hash(Util.getByteArray(h + k));
+  k = Array(16);
+  for (var p = 0; 16 > p; p++) k[p] = h[p] ^ h[p + 16];
+  h = new BigInteger(Util.toHexString(k), 16);
+  m = new BigInteger(m, 16);
+  h = h.xor(m);
+  m = n.length.toString(16);
+  16 > n.length && (m = "0" + m);
+  n = new BigInteger(getByteArray(n));
+  n = "03" + m + n.toString(16);
+  biTLVOTIP = new BigInteger(n, 16);
+  m = h.toString(16) + biTLVOTIP.toString(16);
+  n = new BigInteger("0110" + m, 16);
+  m = new RSAKey();
+  m.setPublic(d, b);
+  512 == d.length && (Is2048 = !0);
+  return m.encrypt(n).toString(16);
+}
+function encryptVerifyStaticNoUserRSABlock512(b, d, h, k) {
+  hashedPassword = SHA512(h);
+  hashedPasswordHex = new BigInteger(hashedPassword, 16);
+  randomHex = new BigInteger(k, 16);
+  xorBytes = hashedPasswordHex.xor(randomHex);
+  payload = new BigInteger("0140" + xorBytes.toString(16), 16);
+  c = new RSAKey();
+  c.setPublic(d, b);
+  512 == d.length && (Is2048 = !0);
+  b = !0;
+  do
+    (d = c.encrypt(payload).toString(16)),
+      !0 == Is2048 ? 512 == d.length && (b = !1) : 256 == d.length && (b = !1);
+  while (b);
+  return d;
+}
+function encryptVerifyNoUserRSABlock512(b, d, h, k) {
+  c = SHA512(h);
+  c = new BigInteger(c, 16);
+  f = new BigInteger(k, 16);
+  c = c.xor(f);
+  f = h.length.toString(16);
+  16 > h.length && (f = "0" + f);
+  g = new BigInteger(getByteArray(h));
+  g = "03" + f + g.toString(16);
+  biTLVOTIP = new BigInteger(g, 16);
+  f = c.toString(16) + biTLVOTIP.toString(16);
+  g = new BigInteger("0140" + f, 16);
+  f = new RSAKey();
+  f.setPublic(d, b);
+  512 == d.length && (Is2048 = !0);
+  return f.encrypt(g).toString(16);
+}
+function encryptChangePwdNoVerifyRSABlockMD5(b, d, h, k, n, m, p) {
+  k = MD5(h + k);
+  k = new BigInteger(k, 16);
+  l = new BigInteger(m, 16);
+  k = k.xor(l);
+  m = "0110" + k.toString(16);
+  k = MD5(h + n);
+  k = new BigInteger(k, 16);
+  l = new BigInteger(p, 16);
+  k = k.xor(l);
+  h = "0210" + k.toString(16);
+  h = new BigInteger(m + h, 16);
+  n = new RSAKey();
+  n.setPublic(d, b);
+  512 == d.length && (Is2048 = !0);
+  return n.encrypt(h).toString(16);
+}
+function encryptChangePwdNoVerifyRSABlock256(b, d, h, k, n, m, p) {
+  k = doSHA256Hash(Util.getByteArray(h + k));
+  for (var q = Array(16), r = 0; 16 > r; r++) q[r] = k[r] ^ k[r + 16];
+  k = new BigInteger(Util.toHexString(q), 16);
+  q = new BigInteger(m, 16);
+  k = k.xor(q);
+  m = "0110" + k.toString(16);
+  k = doSHA256Hash(Util.getByteArray(h + n));
+  q = Array(16);
+  for (r = 0; 16 > r; r++) q[r] = k[r] ^ k[r + 16];
+  k = new BigInteger(Util.toHexString(q), 16);
+  q = new BigInteger(p, 16);
+  k = k.xor(q);
+  h = "0210" + k.toString(16);
+  h = new BigInteger(m + h, 16);
+  n = new RSAKey();
+  n.setPublic(d, b);
+  512 == d.length && (Is2048 = !0);
+  b = !0;
+  do
+    (d = n.encrypt(h).toString(16)),
+      !0 == Is2048 ? 512 == d.length && (b = !1) : 256 == d.length && (b = !1);
+  while (b);
+  return d;
+}
+function encryptChangePwdNoVerifyNoUserRSABlock256(b, d, h, k, n, m) {
+  h = doSHA256Hash(Util.getByteArray(h));
+  for (var p = Array(16), q = 0; 16 > q; q++) p[q] = h[q] ^ h[q + 16];
+  h = new BigInteger(Util.toHexString(p), 16);
+  p = new BigInteger(n, 16);
+  h = h.xor(p);
+  n = "0110" + h.toString(16);
+  h = doSHA256Hash(Util.getByteArray(k));
+  p = Array(16);
+  for (q = 0; 16 > q; q++) p[q] = h[q] ^ h[q + 16];
+  h = new BigInteger(Util.toHexString(p), 16);
+  p = new BigInteger(m, 16);
+  h = h.xor(p);
+  c = "0210" + h.toString(16);
+  c = new BigInteger(n + c, 16);
+  k = new RSAKey();
+  k.setPublic(d, b);
+  512 == d.length && (Is2048 = !0);
+  b = !0;
+  do
+    (d = k.encrypt(c).toString(16)),
+      !0 == Is2048 ? 512 == d.length && (b = !1) : 256 == d.length && (b = !1);
+  while (b);
+  return d;
+}
+function encryptChangePwdNoVerifyNoUserRSABlock256U(b, d, h, k, n, m) {
+  hashedPassword = doSHA256Hash(Util.getByteArray(h));
+  e = new BigInteger(Util.toHexString(hashedPassword), 16);
+  l = new BigInteger(n, 16);
+  e = e.xor(l);
+  f = "0120" + e.toString(16);
+  hashedNewPassword = doSHA256Hash(Util.getByteArray(k));
+  e = new BigInteger(Util.toHexString(hashedNewPassword), 16);
+  l = new BigInteger(m, 16);
+  e = e.xor(l);
+  c = "0220" + e.toString(16);
+  c = new BigInteger(f + c, 16);
+  g = new RSAKey();
+  g.setPublic(d, b);
+  512 == d.length && (Is2048 = !0);
+  b = !0;
+  do
+    (d = g.encrypt(c).toString(16)),
+      !0 == Is2048 ? 512 == d.length && (b = !1) : 256 == d.length && (b = !1);
+  while (b);
+  return d;
+}
+function encryptChangePwdRSABlock256(b, d, h, k, n, m, p, q) {
+  k = doSHA256Hash(Util.getByteArray(h + k));
+  for (var r = Array(16), x = 0; 16 > x; x++) r[x] = k[x] ^ k[x + 16];
+  k = new BigInteger(Util.toHexString(r), 16);
+  r = new BigInteger(p, 16);
+  k = k.xor(r);
+  p = "0110" + k.toString(16);
+  k = doSHA256Hash(Util.getByteArray(h + n));
+  r = Array(16);
+  for (x = 0; 16 > x; x++) r[x] = k[x] ^ k[x + 16];
+  k = new BigInteger(Util.toHexString(r), 16);
+  r = new BigInteger(q, 16);
+  k = k.xor(r);
+  h = "0210" + k.toString(16);
+  n = m.length.toString(16);
+  16 > m.length && (n = "0" + n);
+  m = new BigInteger(getByteArray(m));
+  m = "03" + n + m.toString(16);
+  m = new BigInteger(p + h + m, 16);
+  p = new RSAKey();
+  p.setPublic(d, b);
+  return p.encrypt(m).toString(16);
+}
+function encryptChangePwdNoVerifyNoUserRSABlock512(b, d, h, k, n, m) {
+  hashedPassword = SHA512(h);
+  e = new BigInteger(hashedPassword, 16);
+  l = new BigInteger(n, 16);
+  e = e.xor(l);
+  f = "0140" + e.toString(16);
+  hashedNewPassword = SHA512(k);
+  e = new BigInteger(hashedNewPassword, 16);
+  l = new BigInteger(m, 16);
+  e = e.xor(l);
+  c = "0240" + e.toString(16);
+  c = new BigInteger(f + c, 16);
+  g = new RSAKey();
+  g.setPublic(d, b);
+  512 == d.length && (Is2048 = !0);
+  b = !0;
+  do
+    (d = g.encrypt(c).toString(16)),
+      !0 == Is2048 ? 512 == d.length && (b = !1) : 256 == d.length && (b = !1);
+  while (b);
+  return d;
+}
+function encryptMigratePwdNoVerifyNoUser256RSABlock512(b, d, h, k, n) {
+  sha256Pwd = doSHA256Hash(Util.getByteArray(h));
+  e = new BigInteger(Util.toHexString(sha256Pwd), 16);
+  l = new BigInteger(k, 16);
+  e = e.xor(l);
+  f = "0120" + e.toString(16);
+  sha512Pwd = SHA512(h);
+  sha512PwdHex = new BigInteger(sha512Pwd, 16);
+  newRandomHex = new BigInteger(n, 16);
+  newPassword = sha512PwdHex.xor(newRandomHex);
+  newPasswordLoad = "0240" + newPassword.toString(16);
+  c = new BigInteger(f + newPasswordLoad, 16);
+  g = new RSAKey();
+  g.setPublic(d, b);
+  512 == d.length && (Is2048 = !0);
+  b = !0;
+  do
+    (d = g.encrypt(c).toString(16)),
+      !0 == Is2048 ? 512 == d.length && (b = !1) : 256 == d.length && (b = !1);
+  while (b);
+  return d;
+}
+function encryptVerifyOtipNoUserRSABlock(b, d, h) {
+  var k = h.length.toString(16);
+  16 > h.length && (k = "0" + k);
+  h = new BigInteger(getByteArray(h));
+  k = "03" + k + h.toString(16);
+  biTLVOTIP = new BigInteger(k, 16);
+  512 == d.length && (Is2048 = !0);
+  k = new RSAKey();
+  k.setPublic(d, b);
+  return k.encrypt(biTLVOTIP).toString(16);
+}
+function doSHA256Hash(b) {
+  return Util.fromHexString(sha256Hash(Util.cByteArrayToNString(b)));
+}
+function rsaDES3EncryptDataPKCS5Padding_CBC(b, d, h, k) {
+  var n = des3KeyGen(),
+    m = new RSAKey();
+  m.setPublic(d, b);
+  b = m.encryptS(new BigInteger(n, 16));
+  h = des3EncryptPKCS5Padding_CBC(n, h, k);
+  return b.toString(16) + h;
+}
+function des3EncryptPKCS5Padding_CBC(b, d, h) {
+  b = Util.fromHexToString(b);
+  h = Util.fromHexToString(h);
+  return Util.stringToHex(des(b, d, 1, 1, h, 1));
+}
+function des3KeyGen() {
+  return Util.toHexString(Util.randomBytes(24));
+}
+function getByteArray(b) {
+  a = [];
+  for (var d = 0; d < b.length; d++) a[d] = b.charCodeAt(d);
+  return a;
+}
+var dbits,
+  j_lm = !0;
+function BigInteger(b, d, h) {
+  null != b &&
+    ("number" == typeof b
+      ? this.fromNumber(b, d, h)
+      : null == d && "string" != typeof b
+      ? this.fromString(b, 256)
+      : this.fromString(b, d));
+}
+function nbi() {
+  return new BigInteger(null);
+}
+function am1(b, d, h, k, n, m) {
+  for (; 0 <= --m; ) {
+    var p = d * this[b++] + h[k] + n;
+    n = Math.floor(p / 67108864);
+    h[k++] = p & 67108863;
+  }
+  return n;
+}
+var MD5 = function(b) {
+  function d(b, d, h, k, m, n, p, q) {
+    b = d
+      .and(h)
+      .or(d.not().and(k))
+      .aU(m)
+      .aU(new dW(p, q))
+      .aU(b);
+    return d.aU(b.clf(n));
+  }
+  function h(b, d, h, k, m, n, p, q) {
+    b = d
+      .and(k)
+      .or(h.and(k.not()))
+      .aU(m)
+      .aU(new dW(p, q))
+      .aU(b);
+    return d.aU(b.clf(n));
+  }
+  function k(b, d, h, k, m, n, p, q) {
+    b = d
+      .xor(h)
+      .xor(k)
+      .aU(m)
+      .aU(new dW(p, q))
+      .aU(b);
+    return d.aU(b.clf(n));
+  }
+  function n(b, d, h, k, m, n, p, q) {
+    b = h
+      .xor(d.or(k.not()))
+      .aU(m)
+      .aU(new dW(p, q))
+      .aU(b);
+    return d.aU(b.clf(n));
+  }
+  var m = new dW(26437, 8961),
+    p = new dW(61389, 43913),
+    q = new dW(39098, 56574),
+    r = new dW(4146, 21622),
+    x,
+    B,
+    w,
+    A,
+    s = [],
+    s = (function(b) {
+      var d = [],
+        h,
+        k = b.length,
+        m,
+        n,
+        p,
+        q;
+      for (h = 0; 13 >= h; h++)
+        4 * h <= k
+          ? 4 * h == k
+            ? (m = 128)
+            : (m = b.charCodeAt(4 * h))
+          : (m = 0),
+          4 * h + 1 <= k
+            ? 4 * h + 1 == k
+              ? (n = 128)
+              : (n = b.charCodeAt(4 * h + 1))
+            : (n = 0),
+          4 * h + 2 <= k
+            ? 4 * h + 2 == k
+              ? (p = 128)
+              : (p = b.charCodeAt(4 * h + 2))
+            : (p = 0),
+          4 * h + 3 <= k
+            ? 4 * h + 3 == k
+              ? (q = 128)
+              : (q = b.charCodeAt(4 * h + 3))
+            : (q = 0),
+          (d[h] = new dW(
+            ((q & 255) << 8) | (p & 255),
+            ((n & 255) << 8) | (m & 255)
+          ));
+      d[14] = new dW(0, (8 * k) & 65535);
+      d[15] = new dW(0, 0);
+      return d;
+    })(
+      (function(b) {
+        b = b.replace(/\r\n/g, "\n");
+        var d = "",
+          h,
+          k;
+        for (k = 0; k < b.length; k++)
+          (h = b.charCodeAt(k)),
+            128 > h
+              ? (d += String.fromCharCode(h))
+              : (127 < h && 2048 > h
+                  ? (d += String.fromCharCode((h >> 6) | 192))
+                  : ((d += String.fromCharCode((h >> 12) | 224)),
+                    (d += String.fromCharCode(((h >> 6) & 63) | 128))),
+                (d += String.fromCharCode((h & 63) | 128)));
+        return d;
+      })(b)
+    );
+  for (b = 0; b < s.length; b += 16)
+    (x = m),
+      (B = p),
+      (w = q),
+      (A = r),
+      (m = d(m, p, q, r, s[b + 0], 7, 55146, 42104)),
+      (r = d(r, m, p, q, s[b + 1], 12, 59591, 46934)),
+      (q = d(q, r, m, p, s[b + 2], 17, 9248, 28891)),
+      (p = d(p, q, r, m, s[b + 3], 22, 49597, 52974)),
+      (m = d(m, p, q, r, s[b + 4], 7, 62844, 4015)),
+      (r = d(r, m, p, q, s[b + 5], 12, 18311, 50730)),
+      (q = d(q, r, m, p, s[b + 6], 17, 43056, 17939)),
+      (p = d(p, q, r, m, s[b + 7], 22, 64838, 38145)),
+      (m = d(m, p, q, r, s[b + 8], 7, 27008, 39128)),
+      (r = d(r, m, p, q, s[b + 9], 12, 35652, 63407)),
+      (q = d(q, r, m, p, s[b + 10], 17, 65535, 23473)),
+      (p = d(p, q, r, m, s[b + 11], 22, 35164, 55230)),
+      (m = d(m, p, q, r, s[b + 12], 7, 27536, 4386)),
+      (r = d(r, m, p, q, s[b + 13], 12, 64920, 29075)),
+      (q = d(q, r, m, p, s[b + 14], 17, 42617, 17294)),
+      (p = d(p, q, r, m, s[b + 15], 22, 18868, 2081)),
+      (m = h(m, p, q, r, s[b + 1], 5, 63006, 9570)),
+      (r = h(r, m, p, q, s[b + 6], 9, 49216, 45888)),
+      (q = h(q, r, m, p, s[b + 11], 14, 9822, 23121)),
+      (p = h(p, q, r, m, s[b + 0], 20, 59830, 51114)),
+      (m = h(m, p, q, r, s[b + 5], 5, 54831, 4189)),
+      (r = h(r, m, p, q, s[b + 10], 9, 580, 5203)),
+      (q = h(q, r, m, p, s[b + 15], 14, 55457, 59009)),
+      (p = h(p, q, r, m, s[b + 4], 20, 59347, 64456)),
+      (m = h(m, p, q, r, s[b + 9], 5, 8673, 52710)),
+      (r = h(r, m, p, q, s[b + 14], 9, 49975, 2006)),
+      (q = h(q, r, m, p, s[b + 3], 14, 62677, 3463)),
+      (p = h(p, q, r, m, s[b + 8], 20, 17754, 5357)),
+      (m = h(m, p, q, r, s[b + 13], 5, 43491, 59653)),
+      (r = h(r, m, p, q, s[b + 2], 9, 64751, 41976)),
+      (q = h(q, r, m, p, s[b + 7], 14, 26479, 729)),
+      (p = h(p, q, r, m, s[b + 12], 20, 36138, 19594)),
+      (m = k(m, p, q, r, s[b + 5], 4, 65530, 14658)),
+      (r = k(r, m, p, q, s[b + 8], 11, 34673, 63105)),
+      (q = k(q, r, m, p, s[b + 11], 16, 28061, 24866)),
+      (p = k(p, q, r, m, s[b + 14], 23, 64997, 14348)),
+      (m = k(m, p, q, r, s[b + 1], 4, 42174, 59972)),
+      (r = k(r, m, p, q, s[b + 4], 11, 19422, 53161)),
+      (q = k(q, r, m, p, s[b + 7], 16, 63163, 19296)),
+      (p = k(p, q, r, m, s[b + 10], 23, 48831, 48240)),
+      (m = k(m, p, q, r, s[b + 13], 4, 10395, 32454)),
+      (r = k(r, m, p, q, s[b + 0], 11, 60065, 10234)),
+      (q = k(q, r, m, p, s[b + 3], 16, 54511, 12421)),
+      (p = k(p, q, r, m, s[b + 6], 23, 1160, 7429)),
+      (m = k(m, p, q, r, s[b + 9], 4, 55764, 53305)),
+      (r = k(r, m, p, q, s[b + 12], 11, 59099, 39397)),
+      (q = k(q, r, m, p, s[b + 15], 16, 8098, 31992)),
+      (p = k(p, q, r, m, s[b + 2], 23, 50348, 22117)),
+      (m = n(m, p, q, r, s[b + 0], 6, 62505, 8772)),
+      (r = n(r, m, p, q, s[b + 7], 10, 17194, 65431)),
+      (q = n(q, r, m, p, s[b + 14], 15, 43924, 9127)),
+      (p = n(p, q, r, m, s[b + 5], 21, 64659, 41017)),
+      (m = n(m, p, q, r, s[b + 12], 6, 25947, 22979)),
+      (r = n(r, m, p, q, s[b + 3], 10, 36620, 52370)),
+      (q = n(q, r, m, p, s[b + 10], 15, 65519, 62589)),
+      (p = n(p, q, r, m, s[b + 1], 21, 34180, 24017)),
+      (m = n(m, p, q, r, s[b + 8], 6, 28584, 32335)),
+      (r = n(r, m, p, q, s[b + 15], 10, 65068, 59104)),
+      (q = n(q, r, m, p, s[b + 6], 15, 41729, 17172)),
+      (p = n(p, q, r, m, s[b + 13], 21, 19976, 4513)),
+      (m = n(m, p, q, r, s[b + 4], 6, 63315, 32386)),
+      (r = n(r, m, p, q, s[b + 11], 10, 48442, 62005)),
+      (q = n(q, r, m, p, s[b + 2], 15, 10967, 53947)),
+      (p = n(p, q, r, m, s[b + 9], 21, 60294, 54161)),
+      (m = m.aU(x)),
+      (p = p.aU(B)),
+      (q = q.aU(w)),
+      (r = r.aU(A));
+  return m.gH() + p.gH() + q.gH() + r.gH();
+};
+function dW(b, d) {
+  this.wa = Array(2);
+  this.wa[0] = b;
+  this.wa[1] = d;
+}
+dW.prototype.m = function() {
+  return this.wa[0];
+};
+dW.prototype.l = function() {
+  return this.wa[1];
+};
+dW.prototype.gH = function() {
+  return tH(this.l()) + tH(this.m());
+};
+function tH(b) {
+  var d = "0" + (b & 255).toString(16);
+  b = "0" + ((b >>> 8) & 255).toString(16);
+  return d.substr(d.length - 2, 2) + b.substr(b.length - 2, 2);
+}
+dW.prototype.aU = function(b) {
+  var d = this.l() + b.l();
+  b = this.m() + b.m() + (d >> 16);
+  return new dW(b & 65535, d & 65535);
+};
+dW.prototype.clf = function(b) {
+  var d = this.m(),
+    h = this.l();
+  return 16 > b
+    ? lf(d, h, 16 - b, b, !1)
+    : 16 == b
+    ? new dW(h, d)
+    : lf(d, h, 32 - b, b - 16, !0);
+};
+function lf(b, d, h, k, n) {
+  var m = (b >>> h) & (Math.pow(2, k) - 1);
+  h = (d >>> h) & (Math.pow(2, k) - 1);
+  b = ((b << k) | h) & 65535;
+  d = ((d << k) | m) & 65535;
+  return n ? new dW(d, b) : new dW(b, d);
+}
+dW.prototype.not = function() {
+  return new dW(~this.m() & 65535, ~this.l() & 65535);
+};
+dW.prototype.or = function(b) {
+  return new dW((this.m() | b.m()) & 65535, (this.l() | b.l()) & 65535);
+};
+dW.prototype.xor = function(b) {
+  return new dW((this.m() ^ b.m()) & 65535, (this.l() ^ b.l()) & 65535);
+};
+dW.prototype.and = function(b) {
+  return new dW(this.m() & b.m() & 65535, this.l() & b.l() & 65535);
+};
+function am2(b, d, h, k, n, m) {
+  var p = d & 32767;
+  for (d >>= 15; 0 <= --m; ) {
+    var q = this[b] & 32767,
+      r = this[b++] >> 15,
+      x = d * q + r * p,
+      q = p * q + ((x & 32767) << 15) + h[k] + (n & 1073741823);
+    n = (q >>> 30) + (x >>> 15) + d * r + (n >>> 30);
+    h[k++] = q & 1073741823;
+  }
+  return n;
+}
+function am3(b, d, h, k, n, m) {
+  var p = d & 16383;
+  for (d >>= 14; 0 <= --m; ) {
+    var q = this[b] & 16383,
+      r = this[b++] >> 14,
+      x = d * q + r * p,
+      q = p * q + ((x & 16383) << 14) + h[k] + n;
+    n = (q >> 28) + (x >> 14) + d * r;
+    h[k++] = q & 268435455;
+  }
+  return n;
+}
+"Nokia" == navigator.appName
+  ? ((BigInteger.prototype.am = am3), (dbits = 28))
+  : j_lm && "Microsoft Internet Explorer" == navigator.appName
+  ? ((BigInteger.prototype.am = am2), (dbits = 30))
+  : j_lm && "Netscape" != navigator.appName
+  ? ((BigInteger.prototype.am = am1), (dbits = 26))
+  : ((BigInteger.prototype.am = am3), (dbits = 28));
+BigInteger.prototype.DB = dbits;
+BigInteger.prototype.DM = (1 << dbits) - 1;
+BigInteger.prototype.DV = 1 << dbits;
+var BI_FP = 52;
+BigInteger.prototype.FV = Math.pow(2, BI_FP);
+BigInteger.prototype.F1 = BI_FP - dbits;
+BigInteger.prototype.F2 = 2 * dbits - BI_FP;
+var BI_RM = "0123456789abcdefghijklmnopqrstuvwxyz",
+  BI_RC = [],
+  rr,
+  vv;
+rr = 48;
+for (vv = 0; 9 >= vv; ++vv) BI_RC[rr++] = vv;
+rr = 97;
+for (vv = 10; 36 > vv; ++vv) BI_RC[rr++] = vv;
+rr = 65;
+for (vv = 10; 36 > vv; ++vv) BI_RC[rr++] = vv;
+function int2char(b) {
+  return BI_RM.charAt(b);
+}
+function intAt(b, d) {
+  var h = BI_RC[b.charCodeAt(d)];
+  return null == h ? -1 : h;
+}
+function bnpCopyTo(b) {
+  for (var d = this.t - 1; 0 <= d; --d) b[d] = this[d];
+  b.t = this.t;
+  b.s = this.s;
+}
+function bnpFromInt(b) {
+  this.t = 1;
+  this.s = 0 > b ? -1 : 0;
+  0 < b ? (this[0] = b) : -1 > b ? (this[0] = b + DV) : (this.t = 0);
+}
+function nbv(b) {
+  var d = nbi();
+  d.fromInt(b);
+  return d;
+}
+function bnpFromString(b, d) {
+  var h;
+  if (16 == d) h = 4;
+  else if (8 == d) h = 3;
+  else if (256 == d) h = 8;
+  else if (2 == d) h = 1;
+  else if (32 == d) h = 5;
+  else if (4 == d) h = 2;
+  else {
+    this.fromRadix(b, d);
+    return;
+  }
+  this.s = this.t = 0;
+  for (var k = b.length, n = !1, m = 0; 0 <= --k; ) {
+    var p = 8 == h ? b[k] & 255 : intAt(b, k);
+    0 > p
+      ? "-" == b.charAt(k) && (n = !0)
+      : ((n = !1),
+        0 == m
+          ? (this[this.t++] = p)
+          : m + h > this.DB
+          ? ((this[this.t - 1] |= (p & ((1 << (this.DB - m)) - 1)) << m),
+            (this[this.t++] = p >> (this.DB - m)))
+          : (this[this.t - 1] |= p << m),
+        (m += h),
+        m >= this.DB && (m -= this.DB));
+  }
+  8 == h &&
+    0 != (b[0] & 128) &&
+    ((this.s = -1),
+    0 < m && (this[this.t - 1] |= ((1 << (this.DB - m)) - 1) << m));
+  this.clamp();
+  n && BigInteger.ZERO.subTo(this, this);
+}
+function bnpClamp() {
+  for (var b = this.s & this.DM; 0 < this.t && this[this.t - 1] == b; )
+    --this.t;
+}
+function bnToString(b) {
+  if (0 > this.s) return "-" + this.negate().toString(b);
+  var d;
+  if (16 == b) d = 4;
+  else if (8 == b) d = 3;
+  else if (2 == b) d = 1;
+  else if (32 == b) d = 5;
+  else if (4 == b) d = 2;
+  else return this.toRadix(b);
+  var h = (1 << d) - 1,
+    k,
+    n = !1,
+    m = "",
+    p = this.t,
+    q = this.DB - ((p * this.DB) % d);
+  if (0 < p--)
+    for (
+      q < this.DB && 0 < (k = this[p] >> q) && ((n = !0), (m = int2char(k)));
+      0 <= p;
+
+    )
+      q < d
+        ? ((k = (this[p] & ((1 << q) - 1)) << (d - q)),
+          (k |= this[--p] >> (q += this.DB - d)))
+        : ((k = (this[p] >> (q -= d)) & h), 0 >= q && ((q += this.DB), --p)),
+        0 < k && (n = !0),
+        n && (m += int2char(k));
+  16 == b && 0 < m.length % 2 && (m = "0" + m);
+  return n ? m : "0";
+}
+function bnNegate() {
+  var b = nbi();
+  BigInteger.ZERO.subTo(this, b);
+  return b;
+}
+function bnAbs() {
+  return 0 > this.s ? this.negate() : this;
+}
+function bnCompareTo(b) {
+  var d = this.s - b.s;
+  if (0 != d) return d;
+  var h = this.t,
+    d = h - b.t;
+  if (0 != d) return d;
+  for (; 0 <= --h; ) if (0 != (d = this[h] - b[h])) return d;
+  return 0;
+}
+function nbits(b) {
+  var d = 1,
+    h;
+  0 != (h = b >>> 16) && ((b = h), (d += 16));
+  0 != (h = b >> 8) && ((b = h), (d += 8));
+  0 != (h = b >> 4) && ((b = h), (d += 4));
+  0 != (h = b >> 2) && ((b = h), (d += 2));
+  0 != b >> 1 && (d += 1);
+  return d;
+}
+function bnBitLength() {
+  return 0 >= this.t
+    ? 0
+    : this.DB * (this.t - 1) + nbits(this[this.t - 1] ^ (this.s & this.DM));
+}
+function bnpDLShiftTo(b, d) {
+  var h;
+  for (h = this.t - 1; 0 <= h; --h) d[h + b] = this[h];
+  for (h = b - 1; 0 <= h; --h) d[h] = 0;
+  d.t = this.t + b;
+  d.s = this.s;
+}
+function bnpDRShiftTo(b, d) {
+  for (var h = b; h < this.t; ++h) d[h - b] = this[h];
+  d.t = Math.max(this.t - b, 0);
+  d.s = this.s;
+}
+function bnpLShiftTo(b, d) {
+  var h = b % this.DB,
+    k = this.DB - h,
+    n = (1 << k) - 1,
+    m = Math.floor(b / this.DB),
+    p = (this.s << h) & this.DM,
+    q;
+  for (q = this.t - 1; 0 <= q; --q)
+    (d[q + m + 1] = (this[q] >> k) | p), (p = (this[q] & n) << h);
+  for (q = m - 1; 0 <= q; --q) d[q] = 0;
+  d[m] = p;
+  d.t = this.t + m + 1;
+  d.s = this.s;
+  d.clamp();
+}
+function bnpRShiftTo(b, d) {
+  d.s = this.s;
+  var h = Math.floor(b / this.DB);
+  if (h >= this.t) d.t = 0;
+  else {
+    var k = b % this.DB,
+      n = this.DB - k,
+      m = (1 << k) - 1;
+    d[0] = this[h] >> k;
+    for (var p = h + 1; p < this.t; ++p)
+      (d[p - h - 1] |= (this[p] & m) << n), (d[p - h] = this[p] >> k);
+    0 < k && (d[this.t - h - 1] |= (this.s & m) << n);
+    d.t = this.t - h;
+    d.clamp();
+  }
+}
+function bnpSubTo(b, d) {
+  for (var h = 0, k = 0, n = Math.min(b.t, this.t); h < n; )
+    (k += this[h] - b[h]), (d[h++] = k & this.DM), (k >>= this.DB);
+  if (b.t < this.t) {
+    for (k -= b.s; h < this.t; )
+      (k += this[h]), (d[h++] = k & this.DM), (k >>= this.DB);
+    k += this.s;
+  } else {
+    for (k += this.s; h < b.t; )
+      (k -= b[h]), (d[h++] = k & this.DM), (k >>= this.DB);
+    k -= b.s;
+  }
+  d.s = 0 > k ? -1 : 0;
+  -1 > k ? (d[h++] = this.DV + k) : 0 < k && (d[h++] = k);
+  d.t = h;
+  d.clamp();
+}
+function bnpMultiplyTo(b, d) {
+  var h = this.abs(),
+    k = b.abs(),
+    n = h.t;
+  for (d.t = n + k.t; 0 <= --n; ) d[n] = 0;
+  for (n = 0; n < k.t; ++n) d[n + h.t] = h.am(0, k[n], d, n, 0, h.t);
+  d.s = 0;
+  d.clamp();
+  this.s != b.s && BigInteger.ZERO.subTo(d, d);
+}
+function bnpSquareTo(b) {
+  for (var d = this.abs(), h = (b.t = 2 * d.t); 0 <= --h; ) b[h] = 0;
+  for (h = 0; h < d.t - 1; ++h) {
+    var k = d.am(h, d[h], b, 2 * h, 0, 1);
+    (b[h + d.t] += d.am(h + 1, 2 * d[h], b, 2 * h + 1, k, d.t - h - 1)) >=
+      d.DV && ((b[h + d.t] -= d.DV), (b[h + d.t + 1] = 1));
+  }
+  0 < b.t && (b[b.t - 1] += d.am(h, d[h], b, 2 * h, 0, 1));
+  b.s = 0;
+  b.clamp();
+}
+function bnpDivRemTo(b, d, h) {
+  var k = b.abs();
+  if (!(0 >= k.t)) {
+    var n = this.abs();
+    if (n.t < k.t) null != d && d.fromInt(0), null != h && this.copyTo(h);
+    else {
+      null == h && (h = nbi());
+      var m = nbi(),
+        p = this.s;
+      b = b.s;
+      var q = this.DB - nbits(k[k.t - 1]);
+      0 < q ? (k.lShiftTo(q, m), n.lShiftTo(q, h)) : (k.copyTo(m), n.copyTo(h));
+      k = m.t;
+      n = m[k - 1];
+      if (0 != n) {
+        var r = n * (1 << this.F1) + (1 < k ? m[k - 2] >> this.F2 : 0),
+          x = this.FV / r,
+          r = (1 << this.F1) / r,
+          B = 1 << this.F2,
+          w = h.t,
+          A = w - k,
+          s = null == d ? nbi() : d;
+        m.dlShiftTo(A, s);
+        0 <= h.compareTo(s) && ((h[h.t++] = 1), h.subTo(s, h));
+        BigInteger.ONE.dlShiftTo(k, s);
+        for (s.subTo(m, m); m.t < k; ) m[m.t++] = 0;
+        for (; 0 <= --A; ) {
+          var v =
+            h[--w] == n ? this.DM : Math.floor(h[w] * x + (h[w - 1] + B) * r);
+          if ((h[w] += m.am(0, v, h, A, 0, k)) < v)
+            for (m.dlShiftTo(A, s), h.subTo(s, h); h[w] < --v; ) h.subTo(s, h);
+        }
+        null != d && (h.drShiftTo(k, d), p != b && BigInteger.ZERO.subTo(d, d));
+        h.t = k;
+        h.clamp();
+        0 < q && h.rShiftTo(q, h);
+        0 > p && BigInteger.ZERO.subTo(h, h);
+      }
+    }
+  }
+}
+function Classic(b) {
+  this.m = b;
+}
+function cConvert(b) {
+  return 0 > b.s || 0 <= b.compareTo(this.m) ? b.mod(this.m) : b;
+}
+function cRevert(b) {
+  return b;
+}
+function cReduce(b) {
+  b.divRemTo(this.m, null, b);
+}
+function cMulTo(b, d, h) {
+  b.multiplyTo(d, h);
+  this.reduce(h);
+}
+function cSqrTo(b, d) {
+  b.squareTo(d);
+  this.reduce(d);
+}
+Classic.prototype.convert = cConvert;
+Classic.prototype.revert = cRevert;
+Classic.prototype.reduce = cReduce;
+Classic.prototype.mulTo = cMulTo;
+Classic.prototype.sqrTo = cSqrTo;
+function bnpInvDigit() {
+  if (1 > this.t) return 0;
+  var b = this[0];
+  if (0 == (b & 1)) return 0;
+  var d = b & 3,
+    d = (d * (2 - (b & 15) * d)) & 15,
+    d = (d * (2 - (b & 255) * d)) & 255,
+    d = (d * (2 - (((b & 65535) * d) & 65535))) & 65535,
+    d = (d * (2 - ((b * d) % this.DV))) % this.DV;
+  return 0 < d ? this.DV - d : -d;
+}
+function Montgomery(b) {
+  this.m = b;
+  this.mp = b.invDigit();
+  this.mpl = this.mp & 32767;
+  this.mph = this.mp >> 15;
+  this.um = (1 << (b.DB - 15)) - 1;
+  this.mt2 = 2 * b.t;
+}
+function montConvert(b) {
+  var d = nbi();
+  b.abs().dlShiftTo(this.m.t, d);
+  d.divRemTo(this.m, null, d);
+  0 > b.s && 0 < d.compareTo(BigInteger.ZERO) && this.m.subTo(d, d);
+  return d;
+}
+function montRevert(b) {
+  var d = nbi();
+  b.copyTo(d);
+  this.reduce(d);
+  return d;
+}
+function montReduce(b) {
+  for (; b.t <= this.mt2; ) b[b.t++] = 0;
+  for (var d = 0; d < this.m.t; ++d) {
+    var h = b[d] & 32767,
+      k =
+        (h * this.mpl +
+          (((h * this.mph + (b[d] >> 15) * this.mpl) & this.um) << 15)) &
+        b.DM,
+      h = d + this.m.t;
+    for (b[h] += this.m.am(0, k, b, d, 0, this.m.t); b[h] >= b.DV; )
+      (b[h] -= b.DV), b[++h]++;
+  }
+  b.clamp();
+  b.drShiftTo(this.m.t, b);
+  0 <= b.compareTo(this.m) && b.subTo(this.m, b);
+}
+function montSqrTo(b, d) {
+  b.squareTo(d);
+  this.reduce(d);
+}
+function montMulTo(b, d, h) {
+  b.multiplyTo(d, h);
+  this.reduce(h);
+}
+Montgomery.prototype.convert = montConvert;
+Montgomery.prototype.revert = montRevert;
+Montgomery.prototype.reduce = montReduce;
+Montgomery.prototype.mulTo = montMulTo;
+Montgomery.prototype.sqrTo = montSqrTo;
+function bnpIsEven() {
+  return 0 == (0 < this.t ? this[0] & 1 : this.s);
+}
+function bnpExp(b, d) {
+  var h = nbi(),
+    k = nbi(),
+    n = d.convert(this),
+    m = nbits(b) - 1;
+  for (n.copyTo(h); 0 <= --m; )
+    if ((d.sqrTo(h, k), 0 < (b & (1 << m)))) d.mulTo(k, n, h);
+    else
+      var p = h,
+        h = k,
+        k = p;
+  return d.revert(h);
+}
+function bnModPowInt(b, d) {
+  var h;
+  h = 256 > b || d.isEven() ? new Classic(d) : new Montgomery(d);
+  return this.exp(b, h);
+}
+function bnpBitwiseTo(b, d, h) {
+  var k,
+    n,
+    m = Math.min(b.t, this.t);
+  for (k = 0; k < m; ++k) h[k] = d(this[k], b[k]);
+  if (b.t < this.t) {
+    n = b.s & this.DM;
+    for (k = m; k < this.t; ++k) h[k] = d(this[k], n);
+    h.t = this.t;
+  } else {
+    n = this.s & this.DM;
+    for (k = m; k < b.t; ++k) h[k] = d(n, b[k]);
+    h.t = b.t;
+  }
+  h.s = d(this.s, b.s);
+  h.clamp();
+}
+function op_xor(b, d) {
+  return b ^ d;
+}
+function bnXor(b) {
+  var d = nbi();
+  this.bitwiseTo(b, op_xor, d);
+  return d;
+}
+function lbit(b) {
+  if (0 == b) return -1;
+  var d = 0;
+  0 == (b & 65535) && ((b >>= 16), (d += 16));
+  0 == (b & 255) && ((b >>= 8), (d += 8));
+  0 == (b & 15) && ((b >>= 4), (d += 4));
+  0 == (b & 3) && ((b >>= 2), (d += 2));
+  0 == (b & 1) && ++d;
+  return d;
+}
+BigInteger.prototype.copyTo = bnpCopyTo;
+BigInteger.prototype.fromInt = bnpFromInt;
+BigInteger.prototype.fromString = bnpFromString;
+BigInteger.prototype.clamp = bnpClamp;
+BigInteger.prototype.dlShiftTo = bnpDLShiftTo;
+BigInteger.prototype.subTo = bnpSubTo;
+BigInteger.prototype.rShiftTo = bnpRShiftTo;
+BigInteger.prototype.drShiftTo = bnpDRShiftTo;
+BigInteger.prototype.invDigit = bnpInvDigit;
+BigInteger.prototype.isEven = bnpIsEven;
+BigInteger.prototype.multiplyTo = bnpMultiplyTo;
+BigInteger.prototype.lShiftTo = bnpLShiftTo;
+BigInteger.prototype.divRemTo = bnpDivRemTo;
+BigInteger.prototype.squareTo = bnpSquareTo;
+BigInteger.prototype.exp = bnpExp;
+BigInteger.prototype.bitwiseTo = bnpBitwiseTo;
+BigInteger.prototype.toString = bnToString;
+BigInteger.prototype.negate = bnNegate;
+BigInteger.prototype.abs = bnAbs;
+BigInteger.prototype.compareTo = bnCompareTo;
+BigInteger.prototype.bitLength = bnBitLength;
+BigInteger.prototype.modPowInt = bnModPowInt;
+BigInteger.prototype.xor = bnXor;
+BigInteger.ZERO = nbv(0);
+BigInteger.ONE = nbv(1);
+function parseBigInt(b, d) {
+  return new BigInteger(b, d);
+}
+function pkcs1pad2B(b, d) {
+  var h = b.length;
+  if (h > d - 11 - 4) throw "104";
+  h = randomBytes(d - h - 3 - 4);
+  h = [0, 2, 255, 255, 255, 255].concat(h, [0], b);
+  return new BigInteger(h);
+}
+function randomBytes(b) {
+  for (var d = [], h = 0, h = 0; h < b; h++)
+    d[h] = Math.ceil(255 * Math.random());
+  return d;
+}
+function pkcs1pad2(b, d) {
+  var h = Math.ceil(b.bitLength() / 8);
+  if (d < h + 11 + 4) return alert("Message too long for RSA"), null;
+  for (
+    var k = [0, 2, 255, 255, 255, 255], h = d - h - 7, n = 0, m = 6;
+    m < h + 6;
+
+  ) {
+    for (n = 0; 0 == n; ) n = Math.floor(255 * Math.random());
+    k[m++] = n;
+  }
+  k = new BigInteger(k).toString(16) + "00" + b.toString(16);
+  return new BigInteger(k, 16);
+}
+function pkcs1pad2S(b, d) {
+  var h = Math.ceil(b.bitLength() / 8);
+  if (d < h + 11) return alert("Message too long for RSA"), null;
+  for (var k = [0, 2], h = d - h - 3, n = 2; n < h + 2; ) {
+    for (var m = 0; 0 == m; ) m = Math.floor(255 * Math.random());
+    k[n++] = m;
+  }
+  k = new BigInteger(k).toString(16) + "00" + b.toString(16);
+  return new BigInteger(k, 16);
+}
+function RSAKey() {
+  this.n = null;
+  this.e = 0;
+  this.d = null;
+}
+RSAKey.prototype.setPublic = function(b, d) {
+  null != b && null != d && 0 < b.length && 0 < d.length
+    ? ((this.n = parseBigInt(b, 16)), (this.e = parseInt(d, 16)))
+    : alert("Invalid RSA public key");
+};
+RSAKey.prototype.doPublic = function(b) {
+  return b.modPowInt(this.e, this.n);
+};
+RSAKey.prototype.encryptNativeHexStr = function(b) {
+  var d = b.length / 2,
+    h = (this.n.bitLength() + 7) >> 3;
+  if (d > h) throw "104";
+  b = new BigInteger(b, 16);
+  b = this.doPublic(b);
+  if (null == b) return null;
+  b = b.toString(16);
+  if (256 < b.length) return null;
+  if (256 > b.length) for (d = 0; d < 256 - b.length; d++) b = "0" + b;
+  return b;
+};
+RSAKey.prototype.encryptNativeBytes = function(b) {
+  var d = b.length,
+    h = (this.n.bitLength() + 7) >> 3;
+  if (d > h) throw "104";
+  b = new BigInteger(b);
+  b = this.doPublic(b);
+  if (null == b) return null;
+  b = b.toString(16);
+  if (256 < b.length) return null;
+  if (256 > b.length) for (d = 0; d < 256 - b.length; d++) b = "0" + b;
+  return b;
+};
+RSAKey.prototype.encryptS = function(b) {
+  b = pkcs1pad2S(b, (this.n.bitLength() + 7) >> 3);
+  if (null == b) return null;
+  b = this.doPublic(b);
+  if (null == b) return null;
+  b = b.toString(16);
+  if (256 < b.length) return null;
+  if (256 > b.length) for (var d = 0; d < 256 - b.length; d++) b = "0" + b;
+  return b;
+};
+RSAKey.prototype.encrypt = function(b) {
+  b = pkcs1pad2(b, (this.n.bitLength() + 7) >> 3);
+  if (null == b) return null;
+  b = this.doPublic(b);
+  if (null == b) return null;
+  b = b.toString(16);
+  var d = 256;
+  !0 == Is2048 && (d = 512);
+  if (d < b.length) return null;
+  if (d > b.length) for (var h = 0; h < d - b.length; h++) b = "0" + b;
+  return b;
+};
+RSAKey.prototype.encryptB = function(b) {
+  b = pkcs1pad2B(b, (this.n.bitLength() + 7) >> 3);
+  if (null == b) return null;
+  b = this.doPublic(b);
+  if (null == b) return null;
+  b = b.toString(16);
+  if (256 < b.length) return null;
+  if (256 > b.length) for (var d = 0; d < 256 - b.length; d++) b = "0" + b;
+  return b;
+};
+function sha256Hash(b) {
+  var d = [
+      1116352408,
+      1899447441,
+      3049323471,
+      3921009573,
+      961987163,
+      1508970993,
+      2453635748,
+      2870763221,
+      3624381080,
+      310598401,
+      607225278,
+      1426881987,
+      1925078388,
+      2162078206,
+      2614888103,
+      3248222580,
+      3835390401,
+      4022224774,
+      264347078,
+      604807628,
+      770255983,
+      1249150122,
+      1555081692,
+      1996064986,
+      2554220882,
+      2821834349,
+      2952996808,
+      3210313671,
+      3336571891,
+      3584528711,
+      113926993,
+      338241895,
+      666307205,
+      773529912,
+      1294757372,
+      1396182291,
+      1695183700,
+      1986661051,
+      2177026350,
+      2456956037,
+      2730485921,
+      2820302411,
+      3259730800,
+      3345764771,
+      3516065817,
+      3600352804,
+      4094571909,
+      275423344,
+      430227734,
+      506948616,
+      659060556,
+      883997877,
+      958139571,
+      1322822218,
+      1537002063,
+      1747873779,
+      1955562222,
+      2024104815,
+      2227730452,
+      2361852424,
+      2428436474,
+      2756734187,
+      3204031479,
+      3329325298,
+    ],
+    h = [
+      1779033703,
+      3144134277,
+      1013904242,
+      2773480762,
+      1359893119,
+      2600822924,
+      528734635,
+      1541459225,
+    ];
+  b += String.fromCharCode(128);
+  for (
+    var k = Math.ceil((b.length / 4 + 2) / 16), n = Array(k), m = 0;
+    m < k;
+    m++
+  ) {
+    n[m] = Array(16);
+    for (var p = 0; 16 > p; p++)
+      n[m][p] =
+        (b.charCodeAt(64 * m + 4 * p) << 24) |
+        (b.charCodeAt(64 * m + 4 * p + 1) << 16) |
+        (b.charCodeAt(64 * m + 4 * p + 2) << 8) |
+        b.charCodeAt(64 * m + 4 * p + 3);
+  }
+  n[k - 1][14] = (8 * (b.length - 1)) / Math.pow(2, 32);
+  n[k - 1][14] = Math.floor(n[k - 1][14]);
+  n[k - 1][15] = (8 * (b.length - 1)) & 4294967295;
+  b = Array(64);
+  for (var q, r, x, B, w, A, s, m = 0; m < k; m++) {
+    for (var v = 0; 16 > v; v++) b[v] = n[m][v];
+    for (v = 16; 64 > v; v++)
+      b[v] =
+        (sigma1(b[v - 2]) + b[v - 7] + sigma0(b[v - 15]) + b[v - 16]) &
+        4294967295;
+    p = h[0];
+    q = h[1];
+    r = h[2];
+    x = h[3];
+    B = h[4];
+    w = h[5];
+    A = h[6];
+    s = h[7];
+    for (v = 0; 64 > v; v++) {
+      var y = s + Sigma1(B) + Ch(B, w, A) + d[v] + b[v],
+        C = Sigma0(p) + Maj(p, q, r);
+      s = A;
+      A = w;
+      w = B;
+      B = (x + y) & 4294967295;
+      x = r;
+      r = q;
+      q = p;
+      p = (y + C) & 4294967295;
+    }
+    h[0] = (h[0] + p) & 4294967295;
+    h[1] = (h[1] + q) & 4294967295;
+    h[2] = (h[2] + r) & 4294967295;
+    h[3] = (h[3] + x) & 4294967295;
+    h[4] = (h[4] + B) & 4294967295;
+    h[5] = (h[5] + w) & 4294967295;
+    h[6] = (h[6] + A) & 4294967295;
+    h[7] = (h[7] + s) & 4294967295;
+  }
+  return (
+    h[0].toHexStr() +
+    h[1].toHexStr() +
+    h[2].toHexStr() +
+    h[3].toHexStr() +
+    h[4].toHexStr() +
+    h[5].toHexStr() +
+    h[6].toHexStr() +
+    h[7].toHexStr()
+  );
+}
+function ROTR(b, d) {
+  return (d >>> b) | (d << (32 - b));
+}
+function Sigma0(b) {
+  return ROTR(2, b) ^ ROTR(13, b) ^ ROTR(22, b);
+}
+function Sigma1(b) {
+  return ROTR(6, b) ^ ROTR(11, b) ^ ROTR(25, b);
+}
+function sigma0(b) {
+  return ROTR(7, b) ^ ROTR(18, b) ^ (b >>> 3);
+}
+function sigma1(b) {
+  return ROTR(17, b) ^ ROTR(19, b) ^ (b >>> 10);
+}
+function Ch(b, d, h) {
+  return (b & d) ^ (~b & h);
+}
+function Maj(b, d, h) {
+  return (b & d) ^ (b & h) ^ (d & h);
+}
+Number.prototype.toHexStr = function() {
+  for (var b = "", d, h = 7; 0 <= h; h--)
+    (d = (this >>> (4 * h)) & 15), (b += d.toString(16));
+  return b;
+};
+function Util() {}
+Util.parseBigInt = function(b, d) {
+  return new BigInteger(b, d);
+};
+Util.randomString = function(b) {
+  for (var d = "", h = 0, h = 0; h < b; h++)
+    d += String.fromCharCode(Math.ceil(255 * Math.random()));
+  return d;
+};
+Util.randomBytes = function(b) {
+  for (var d = [], h = 0, h = 0; h < b; h++)
+    d[h] = Math.ceil(255 * Math.random());
+  return d;
+};
+Util.toHexString = function(b) {
+  for (var d = "", h = 0; h < b.length; h++) {
+    var k;
+    "number" == typeof b[h]
+      ? (k = b[h].toString(16))
+      : "string" == typeof b[h] && (k = b.charCodeAt(h).toString(16));
+    1 == k.length && (k = "0" + k);
+    d += k;
+  }
+  return d;
+};
+Util.fromHexString = function(b) {
+  b = 0 == b.length % 2 ? b : "0" + b;
+  for (var d = b.length / 2, h = [], k = 0, n = 0; k < d; k++, n++) {
+    var m = 2 * k;
+    h[n] = parseInt("0x" + b.substring(m, m + 2));
+  }
+  return h;
+};
+Util.fromHexToString = function(b) {
+  b = 0 == b.length % 2 ? b : "0" + b;
+  for (var d = b.length / 2, h = "", k = 0; k < d; k++)
+    var n = 2 * k,
+      h = h + String.fromCharCode(parseInt("0x" + b.substring(n, n + 2)));
+  return h;
+};
+Util.cByteArrayToNString = function(b) {
+  for (var d = "", h = 0; h < b.length; h++) d += String.fromCharCode(b[h]);
+  return d;
+};
+Util.getByteArray = function(b) {
+  a = [];
+  for (var d = 0; d < b.length; d++) a[d] = b.charCodeAt(d);
+  return a;
+};
+Util.xorByteArray = function(b, d) {
+  if (b.length > d.length) throw "Invalid parameters.";
+  for (var h = [], k = 0; k < b.length; k++) h[k] = b[k] ^ d[k];
+  return h;
+};
+Util.stringToHex = function(b) {
+  for (var d = "", h = "0123456789abcdef".split(""), k = 0; k < b.length; k++)
+    d += h[b.charCodeAt(k) >> 4] + h[b.charCodeAt(k) & 15];
+  return d;
+};
+function SHA512(b) {
+  function d(b, d) {
+    this.highOrder = b;
+    this.lowOrder = d;
+  }
+  function h(b, h) {
+    var k, m, n;
+    k = (b.lowOrder & 65535) + (h.lowOrder & 65535);
+    m = (b.lowOrder >>> 16) + (h.lowOrder >>> 16) + (k >>> 16);
+    n = ((m & 65535) << 16) | (k & 65535);
+    k = (b.highOrder & 65535) + (h.highOrder & 65535) + (m >>> 16);
+    m = (b.highOrder >>> 16) + (h.highOrder >>> 16) + (k >>> 16);
+    return new d(((m & 65535) << 16) | (k & 65535), n);
+  }
+  function k(b, h, k, m) {
+    var n, p, q;
+    n =
+      (b.lowOrder & 65535) +
+      (h.lowOrder & 65535) +
+      (k.lowOrder & 65535) +
+      (m.lowOrder & 65535);
+    p =
+      (b.lowOrder >>> 16) +
+      (h.lowOrder >>> 16) +
+      (k.lowOrder >>> 16) +
+      (m.lowOrder >>> 16) +
+      (n >>> 16);
+    q = ((p & 65535) << 16) | (n & 65535);
+    n =
+      (b.highOrder & 65535) +
+      (h.highOrder & 65535) +
+      (k.highOrder & 65535) +
+      (m.highOrder & 65535) +
+      (p >>> 16);
+    p =
+      (b.highOrder >>> 16) +
+      (h.highOrder >>> 16) +
+      (k.highOrder >>> 16) +
+      (m.highOrder >>> 16) +
+      (n >>> 16);
+    return new d(((p & 65535) << 16) | (n & 65535), q);
+  }
+  function n(b, h, k, m, n) {
+    var p, q, r;
+    p =
+      (b.lowOrder & 65535) +
+      (h.lowOrder & 65535) +
+      (k.lowOrder & 65535) +
+      (m.lowOrder & 65535) +
+      (n.lowOrder & 65535);
+    q =
+      (b.lowOrder >>> 16) +
+      (h.lowOrder >>> 16) +
+      (k.lowOrder >>> 16) +
+      (m.lowOrder >>> 16) +
+      (n.lowOrder >>> 16) +
+      (p >>> 16);
+    r = ((q & 65535) << 16) | (p & 65535);
+    p =
+      (b.highOrder & 65535) +
+      (h.highOrder & 65535) +
+      (k.highOrder & 65535) +
+      (m.highOrder & 65535) +
+      (n.highOrder & 65535) +
+      (q >>> 16);
+    q =
+      (b.highOrder >>> 16) +
+      (h.highOrder >>> 16) +
+      (k.highOrder >>> 16) +
+      (m.highOrder >>> 16) +
+      (n.highOrder >>> 16) +
+      (p >>> 16);
+    return new d(((q & 65535) << 16) | (p & 65535), r);
+  }
+  function m(b, h) {
+    return 32 >= h
+      ? new d(
+          (b.highOrder >>> h) | (b.lowOrder << (32 - h)),
+          (b.lowOrder >>> h) | (b.highOrder << (32 - h))
+        )
+      : new d(
+          (b.lowOrder >>> h) | (b.highOrder << (32 - h)),
+          (b.highOrder >>> h) | (b.lowOrder << (32 - h))
+        );
+  }
+  function p(b) {
+    var h = m(b, 28),
+      k = m(b, 34);
+    b = m(b, 39);
+    return new d(
+      h.highOrder ^ k.highOrder ^ b.highOrder,
+      h.lowOrder ^ k.lowOrder ^ b.lowOrder
+    );
+  }
+  function q(b) {
+    var h = m(b, 14),
+      k = m(b, 18);
+    b = m(b, 41);
+    return new d(
+      h.highOrder ^ k.highOrder ^ b.highOrder,
+      h.lowOrder ^ k.lowOrder ^ b.lowOrder
+    );
+  }
+  function r(b) {
+    var h = m(b, 1),
+      k = m(b, 8);
+    b = B(b, 7);
+    return new d(
+      h.highOrder ^ k.highOrder ^ b.highOrder,
+      h.lowOrder ^ k.lowOrder ^ b.lowOrder
+    );
+  }
+  function x(b) {
+    var h = m(b, 19),
+      k = m(b, 61);
+    b = B(b, 6);
+    return new d(
+      h.highOrder ^ k.highOrder ^ b.highOrder,
+      h.lowOrder ^ k.lowOrder ^ b.lowOrder
+    );
+  }
+  function B(b, h) {
+    return 32 >= h
+      ? new d(b.highOrder >>> h, (b.lowOrder >>> h) | (b.highOrder << (32 - h)))
+      : new d(0, b.highOrder << (32 - h));
+  }
+  var w = [
+      new d(1779033703, 4089235720),
+      new d(3144134277, 2227873595),
+      new d(1013904242, 4271175723),
+      new d(2773480762, 1595750129),
+      new d(1359893119, 2917565137),
+      new d(2600822924, 725511199),
+      new d(528734635, 4215389547),
+      new d(1541459225, 327033209),
+    ],
+    A = [
+      new d(1116352408, 3609767458),
+      new d(1899447441, 602891725),
+      new d(3049323471, 3964484399),
+      new d(3921009573, 2173295548),
+      new d(961987163, 4081628472),
+      new d(1508970993, 3053834265),
+      new d(2453635748, 2937671579),
+      new d(2870763221, 3664609560),
+      new d(3624381080, 2734883394),
+      new d(310598401, 1164996542),
+      new d(607225278, 1323610764),
+      new d(1426881987, 3590304994),
+      new d(1925078388, 4068182383),
+      new d(2162078206, 991336113),
+      new d(2614888103, 633803317),
+      new d(3248222580, 3479774868),
+      new d(3835390401, 2666613458),
+      new d(4022224774, 944711139),
+      new d(264347078, 2341262773),
+      new d(604807628, 2007800933),
+      new d(770255983, 1495990901),
+      new d(1249150122, 1856431235),
+      new d(1555081692, 3175218132),
+      new d(1996064986, 2198950837),
+      new d(2554220882, 3999719339),
+      new d(2821834349, 766784016),
+      new d(2952996808, 2566594879),
+      new d(3210313671, 3203337956),
+      new d(3336571891, 1034457026),
+      new d(3584528711, 2466948901),
+      new d(113926993, 3758326383),
+      new d(338241895, 168717936),
+      new d(666307205, 1188179964),
+      new d(773529912, 1546045734),
+      new d(1294757372, 1522805485),
+      new d(1396182291, 2643833823),
+      new d(1695183700, 2343527390),
+      new d(1986661051, 1014477480),
+      new d(2177026350, 1206759142),
+      new d(2456956037, 344077627),
+      new d(2730485921, 1290863460),
+      new d(2820302411, 3158454273),
+      new d(3259730800, 3505952657),
+      new d(3345764771, 106217008),
+      new d(3516065817, 3606008344),
+      new d(3600352804, 1432725776),
+      new d(4094571909, 1467031594),
+      new d(275423344, 851169720),
+      new d(430227734, 3100823752),
+      new d(506948616, 1363258195),
+      new d(659060556, 3750685593),
+      new d(883997877, 3785050280),
+      new d(958139571, 3318307427),
+      new d(1322822218, 3812723403),
+      new d(1537002063, 2003034995),
+      new d(1747873779, 3602036899),
+      new d(1955562222, 1575990012),
+      new d(2024104815, 1125592928),
+      new d(2227730452, 2716904306),
+      new d(2361852424, 442776044),
+      new d(2428436474, 593698344),
+      new d(2756734187, 3733110249),
+      new d(3204031479, 2999351573),
+      new d(3329325298, 3815920427),
+      new d(3391569614, 3928383900),
+      new d(3515267271, 566280711),
+      new d(3940187606, 3454069534),
+      new d(4118630271, 4000239992),
+      new d(116418474, 1914138554),
+      new d(174292421, 2731055270),
+      new d(289380356, 3203993006),
+      new d(460393269, 320620315),
+      new d(685471733, 587496836),
+      new d(852142971, 1086792851),
+      new d(1017036298, 365543100),
+      new d(1126000580, 2618297676),
+      new d(1288033470, 3409855158),
+      new d(1501505948, 4234509866),
+      new d(1607167915, 987167468),
+      new d(1816402316, 1246189591),
+    ],
+    s = Array(64),
+    v,
+    y,
+    C,
+    F,
+    t,
+    u,
+    E,
+    G,
+    D,
+    z,
+    H,
+    I;
+  b = unescape(encodeURIComponent(b));
+  strlen = 8 * b.length;
+  b = (function(b) {
+    for (var d = [], h = 8 * b.length, k = 0; k < h; k += 8)
+      d[k >> 5] |= (b.charCodeAt(k / 8) & 255) << (24 - (k % 32));
+    return d;
+  })(b);
+  b[strlen >> 5] |= 128 << (24 - (strlen % 32));
+  b[(((strlen + 128) >> 10) << 5) + 31] = strlen;
+  for (D = 0; D < b.length; D += 32) {
+    v = w[0];
+    y = w[1];
+    C = w[2];
+    F = w[3];
+    t = w[4];
+    u = w[5];
+    E = w[6];
+    G = w[7];
+    for (z = 0; 80 > z; z++)
+      (s[z] =
+        16 > z
+          ? new d(b[2 * z + D], b[2 * z + D + 1])
+          : k(x(s[z - 2]), s[z - 7], r(s[z - 15]), s[z - 16])),
+        (H = n(
+          G,
+          q(t),
+          new d(
+            (t.highOrder & u.highOrder) ^ (~t.highOrder & E.highOrder),
+            (t.lowOrder & u.lowOrder) ^ (~t.lowOrder & E.lowOrder)
+          ),
+          A[z],
+          s[z]
+        )),
+        (I = h(
+          p(v),
+          new d(
+            (v.highOrder & y.highOrder) ^
+              (v.highOrder & C.highOrder) ^
+              (y.highOrder & C.highOrder),
+            (v.lowOrder & y.lowOrder) ^
+              (v.lowOrder & C.lowOrder) ^
+              (y.lowOrder & C.lowOrder)
+          )
+        )),
+        (G = E),
+        (E = u),
+        (u = t),
+        (t = h(F, H)),
+        (F = C),
+        (C = y),
+        (y = v),
+        (v = h(H, I));
+    w[0] = h(v, w[0]);
+    w[1] = h(y, w[1]);
+    w[2] = h(C, w[2]);
+    w[3] = h(F, w[3]);
+    w[4] = h(t, w[4]);
+    w[5] = h(u, w[5]);
+    w[6] = h(E, w[6]);
+    w[7] = h(G, w[7]);
+  }
+  b = [];
+  for (D = 0; D < w.length; D++) b.push(w[D].highOrder), b.push(w[D].lowOrder);
+  return (function(b) {
+    for (var d = "", h = 4 * b.length, k, m = 0; m < h; m += 1)
+      (k = b[m >> 2] >> (8 * (3 - (m % 4)))),
+        (d +=
+          "0123456789abcdef".charAt((k >> 4) & 15) +
+          "0123456789abcdef".charAt(k & 15));
+    return d;
+  })(b);
+}
