@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Singpass - Your Improved Digital ID</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="Singpass\Singapass Site\css\bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="Singpass\Singapass Site\css\style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-light p-0">
+        <div class="row gx-0 d-none d-lg-flex">
+            <div class="col-lg-7 px-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
+                    <small>A Singapore Government Agency Website</small>
+                </div>           
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-primary"><i class="fa fa-car me-3"></i>singpass</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Individuals</a>
+                <a href="about.html" class="nav-item nav-link">Businesses</a>
+                <a href="service.html" class="nav-item nav-link">Developers</a>
+                <a href="service.html" class="nav-item nav-link">Security</a>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+            <a href="signup.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Signup<i class="fa fa-arrow-down ms-3"></i></a>
+            <a href="login.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Login<i class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0 mb-5">
+        <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="img/Hero_landing_desktop.png" alt="Image">
+                    <div class="carousel-caption d-flex align-items-center">
+                        <div class="container">
+                            <div class="row align-items-center justify-content-center justify-content-lg-start">
+                                <div class="col-10 col-lg-7 text-center text-lg-start">
+                                    <h1 class="display-3 text-white mb-4 pb-3 animated slideInDown">Your improved digital ID to make life easy</h1>
+                                    <h3 class="text-white text-white mb-3 animated slideInDown">Singpass is your trusted digital identity for all the secure transaction needs in your everyday life.</h3>
+                                    <div class="flex flex-row flex-wrap justify-around lg:justify-around content-start items-start"><div class="flex-none pb-2"><a href="https://itunes.apple.com/us/app/singpass-mobile/id1340660807" aria-label="App Store" target="_blank" rel="noreferrer"><svg width="151" height="50" viewBox="0 0 151 51" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M138.586.5H11.998c-.462 0-.917 0-1.378.003-.385.002-.767.01-1.156.016-.845.01-1.688.083-2.522.22a8.426 8.426 0 0 0-2.392.784c-.752.383-1.439.88-2.036 1.474A7.825 7.825 0 0 0 1.03 5.022a8.213 8.213 0 0 0-.786 2.379c-.14.827-.216 1.664-.226 2.503-.012.383-.013.767-.019 1.15v28.893c.006.389.007.764.02 1.153.01.838.084 1.675.225 2.502.138.829.403 1.632.786 2.38.381.748.882 1.43 1.483 2.018a7.894 7.894 0 0 0 2.036 1.474 8.47 8.47 0 0 0 2.392.788c.834.136 1.677.21 2.522.221.389.009.771.014 1.156.014.46.002.916.002 1.378.002h126.588c.452 0 .912 0 1.364-.002.384 0 .777-.005 1.16-.014.844-.01 1.685-.084 2.517-.22a8.608 8.608 0 0 0 2.401-.79 7.908 7.908 0 0 0 2.035-1.473 8 8 0 0 0 1.487-2.017c.38-.75.643-1.553.779-2.38.14-.828.218-1.664.234-2.503.004-.389.004-.764.004-1.153.01-.454.01-.905.01-1.367v-26.16c0-.458 0-.912-.01-1.365 0-.384 0-.768-.004-1.152a16.932 16.932 0 0 0-.234-2.502 8.229 8.229 0 0 0-.779-2.38 8.109 8.109 0 0 0-3.522-3.499 8.56 8.56 0 0 0-2.401-.784 16.518 16.518 0 0 0-2.517-.22c-.383-.007-.776-.014-1.16-.017C139.498.5 139.038.5 138.586.5Z" fill="#A6A6A6"></path><path d="M10.627 49.406c-.384 0-.758-.005-1.138-.013a16.073 16.073 0 0 1-2.352-.204 7.437 7.437 0 0 1-2.085-.685 6.801 6.801 0 0 1-1.758-1.27 6.654 6.654 0 0 1-1.284-1.746 7.12 7.12 0 0 1-.683-2.072c-.13-.775-.2-1.558-.21-2.343a113.4 113.4 0 0 1-.018-1.142V11.055s.01-.864.018-1.118c.01-.784.08-1.566.208-2.34.12-.723.351-1.424.684-2.077a6.719 6.719 0 0 1 1.278-1.748A7.001 7.001 0 0 1 5.05 2.494a7.362 7.362 0 0 1 2.08-.68c.781-.127 1.57-.195 2.36-.205l1.136-.015h129.317l1.149.016c.784.009 1.565.077 2.339.203a7.508 7.508 0 0 1 2.102.685 7.013 7.013 0 0 1 3.039 3.025c.328.649.555 1.344.674 2.06.13.78.203 1.57.218 2.36.004.354.004.734.004 1.112.01.47.01.915.01 1.365v26.161c0 .454 0 .897-.01 1.344 0 .407 0 .779-.005 1.162-.015.777-.087 1.551-.215 2.317a7.126 7.126 0 0 1-.68 2.087 6.833 6.833 0 0 1-1.277 1.733 6.83 6.83 0 0 1-1.761 1.278 7.42 7.42 0 0 1-2.099.687c-.778.126-1.564.194-2.352.204-.369.008-.755.013-1.13.013l-1.364.003-127.96-.003Z" fill="#000"></path><path d="M31.168 25.876a6.178 6.178 0 0 1 2.965-5.19 6.385 6.385 0 0 0-5.022-2.697c-2.113-.22-4.162 1.256-5.238 1.256-1.098 0-2.756-1.234-4.541-1.197a6.694 6.694 0 0 0-5.629 3.41c-2.433 4.185-.618 10.336 1.713 13.72 1.167 1.656 2.53 3.507 4.313 3.441 1.746-.072 2.398-1.105 4.505-1.105 2.087 0 2.698 1.105 4.518 1.063 1.873-.03 3.053-1.664 4.179-3.336a13.667 13.667 0 0 0 1.91-3.866 5.977 5.977 0 0 1-3.673-5.499ZM27.73 15.764a6.064 6.064 0 0 0 1.403-4.364 6.252 6.252 0 0 0-4.036 2.075 5.771 5.771 0 0 0-1.44 4.202 5.172 5.172 0 0 0 4.074-1.913Z" fill="#fff"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M47.275 34.425h5.956l1.429 4.195h2.566l-5.642-15.522h-2.621L43.32 38.62h2.523l1.43-4.195Zm5.338-1.936H47.89l2.33-6.81h.064l2.328 6.81ZM64.655 38.739c2.86 0 4.754-2.26 4.754-5.777 0-3.507-1.906-5.777-4.797-5.777a4.047 4.047 0 0 0-3.628 2h-.043v-1.882h-2.263v15.061h2.338V36.76h.054a3.868 3.868 0 0 0 3.585 1.98Zm-.66-9.574c1.819 0 3.01 1.506 3.01 3.797 0 2.312-1.191 3.808-3.01 3.808-1.787 0-2.988-1.527-2.988-3.808 0-2.26 1.201-3.797 2.988-3.797ZM77.194 38.739c2.86 0 4.754-2.26 4.754-5.777 0-3.507-1.906-5.777-4.797-5.777a4.047 4.047 0 0 0-3.628 2h-.043v-1.882h-2.263v15.061h2.338V36.76h.054a3.868 3.868 0 0 0 3.585 1.98Zm-.66-9.574c1.819 0 3.01 1.506 3.01 3.797 0 2.312-1.191 3.808-3.01 3.808-1.787 0-2.989-1.527-2.989-3.808 0-2.26 1.202-3.797 2.989-3.797Z" fill="#fff"></path><path d="M90.236 34.295c.173 1.54 1.678 2.55 3.735 2.55 1.971 0 3.39-1.01 3.39-2.398 0-1.205-.856-1.927-2.881-2.421l-2.025-.485c-2.87-.688-4.201-2.021-4.201-4.184 0-2.678 2.349-4.518 5.685-4.518 3.302 0 5.566 1.84 5.642 4.518h-2.36c-.142-1.55-1.431-2.484-3.315-2.484s-3.173.946-3.173 2.323c0 1.097.824 1.743 2.838 2.237l1.721.42c3.206.753 4.538 2.032 4.538 4.303 0 2.904-2.328 4.723-6.032 4.723-3.465 0-5.805-1.776-5.956-4.584h2.394ZM104.878 24.625v2.678h2.167v1.84h-2.167v6.239c0 .97.434 1.42 1.386 1.42.257-.004.514-.022.769-.053v1.829a6.45 6.45 0 0 1-1.298.107c-2.307 0-3.206-.86-3.206-3.055v-6.487h-1.657v-1.84h1.657v-2.678h2.349Z" fill="#fff"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M113.702 27.164c-3.292 0-5.403 2.238-5.403 5.798 0 3.57 2.09 5.799 5.403 5.799 3.314 0 5.404-2.228 5.404-5.799 0-3.56-2.101-5.798-5.404-5.798Zm0 1.914c1.895 0 3.022 1.442 3.022 3.884 0 2.453-1.127 3.883-3.022 3.883-1.895 0-3.02-1.43-3.02-3.883 0-2.431 1.125-3.884 3.02-3.884Z" fill="#fff"></path><path d="M121.034 27.303h2.231v1.926h.054a2.714 2.714 0 0 1 2.74-2.044c.269-.001.538.028.801.086v2.173a3.288 3.288 0 0 0-1.051-.14 2.365 2.365 0 0 0-1.821.745c-.468.5-.693 1.18-.615 1.858v6.713h-2.339V27.303Z" fill="#fff"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M132.736 38.76c2.577 0 4.591-1.41 4.906-3.464h-2.22a2.58 2.58 0 0 1-2.631 1.592 2.977 2.977 0 0 1-2.261-.916 2.938 2.938 0 0 1-.804-2.29v-.14h8.046v-.796c0-3.431-1.982-5.582-5.134-5.582-3.205 0-5.273 2.302-5.273 5.852 0 3.539 2.057 5.745 5.371 5.745Zm2.697-6.841h-5.696a2.854 2.854 0 0 1 .848-2.037 2.894 2.894 0 0 1 2.053-.836 2.749 2.749 0 0 1 2.029.83c.531.545.808 1.286.766 2.043ZM50.247 12.437a3.334 3.334 0 0 0-2.65-1.022h-2.711v7.458h2.712c2.236 0 3.533-1.37 3.533-3.752a3.285 3.285 0 0 0-.884-2.684Zm-2.78 5.382h-1.415v-5.35h1.416a2.375 2.375 0 0 1 1.87.753c.48.517.702 1.218.606 1.914a2.335 2.335 0 0 1-.596 1.927c-.48.52-1.17.798-1.88.756ZM53.705 13.537a2.661 2.661 0 0 0-1.257 2.52 2.661 2.661 0 0 0 1.255 2.523 2.7 2.7 0 0 0 2.834 0 2.661 2.661 0 0 0 1.255-2.524 2.661 2.661 0 0 0-1.256-2.52 2.7 2.7 0 0 0-2.831 0Zm1.417.586c.968 0 1.52.713 1.52 1.933 0 1.225-.552 1.938-1.52 1.938-.972 0-1.519-.708-1.519-1.938 0-1.22.547-1.933 1.52-1.933Z" fill="#fff"></path><path d="M64.896 18.873h-1.16l-1.17-4.146h-.09l-1.166 4.146h-1.149L58.6 13.244h1.134l1.015 4.295h.083l1.165-4.295h1.073l1.165 4.295h.089l1.01-4.295h1.118l-1.556 5.629ZM67.766 13.244h1.076v.894h.084c.29-.658.97-1.06 1.69-1.002a1.85 1.85 0 0 1 1.488.578c.381.407.556.965.474 1.515v3.644H71.46v-3.365c0-.905-.396-1.354-1.223-1.354a1.304 1.304 0 0 0-1.007.404c-.26.274-.386.647-.346 1.022v3.293h-1.118v-5.629ZM74.36 11.047h1.118v7.826h-1.119v-7.826Z" fill="#fff"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M78.29 13.537a2.661 2.661 0 0 0-1.258 2.52 2.661 2.661 0 0 0 1.256 2.523 2.7 2.7 0 0 0 2.834 0 2.662 2.662 0 0 0 1.255-2.524 2.661 2.661 0 0 0-1.257-2.52 2.7 2.7 0 0 0-2.83 0Zm1.416.586c.968 0 1.52.713 1.52 1.933 0 1.225-.552 1.938-1.52 1.938-.972 0-1.519-.708-1.519-1.938 0-1.22.547-1.933 1.52-1.933ZM85.662 15.6c-1.348.084-2.107.668-2.107 1.681.002.48.208.938.568 1.259.36.32.84.476 1.32.426a1.91 1.91 0 0 0 1.702-.884h.089v.791h1.076v-3.846c0-1.189-.8-1.891-2.221-1.891-1.286 0-2.201.62-2.316 1.587h1.083c.124-.398.557-.626 1.181-.626.764 0 1.16.336 1.16.93v.486l-1.535.088Zm1.535.73v.47a1.324 1.324 0 0 1-.471.924 1.342 1.342 0 0 1-.996.307c-.609 0-1.05-.295-1.05-.802 0-.496.353-.76 1.133-.811l1.384-.088ZM92.131 13.15c-1.431 0-2.352 1.127-2.352 2.906 0 1.783.91 2.91 2.352 2.91a1.97 1.97 0 0 0 1.78-.983h.088v.89h1.072v-7.826h-1.119v3.091h-.083a1.87 1.87 0 0 0-1.738-.987Zm.317 4.818c-.947 0-1.513-.718-1.513-1.912 0-1.184.572-1.907 1.513-1.907.937 0 1.525.739 1.525 1.912 0 1.178-.582 1.907-1.525 1.907ZM100.954 13.537a2.66 2.66 0 0 0-1.257 2.52 2.662 2.662 0 0 0 1.255 2.523 2.7 2.7 0 0 0 2.834 0 2.66 2.66 0 0 0 1.255-2.524 2.659 2.659 0 0 0-1.256-2.52 2.7 2.7 0 0 0-2.831 0Zm1.417.586c.969 0 1.52.713 1.52 1.933 0 1.225-.551 1.938-1.52 1.938-.972 0-1.519-.708-1.519-1.938 0-1.22.547-1.933 1.519-1.933Z" fill="#fff"></path><path d="M106.542 13.244h1.076v.894h.084a1.698 1.698 0 0 1 1.691-1.002 1.849 1.849 0 0 1 1.487.578c.382.407.556.965.474 1.515v3.644h-1.118v-3.365c0-.905-.396-1.354-1.223-1.354a1.303 1.303 0 0 0-1.006.404c-.26.274-.387.647-.347 1.022v3.293h-1.118v-5.629ZM117.673 11.843v1.427h1.228v.935h-1.228V17.1c0 .59.245.848.801.848.143 0 .285-.01.427-.026v.925a3.702 3.702 0 0 1-.608.057c-1.244 0-1.739-.435-1.739-1.52v-3.179h-.9v-.935h.9v-1.427h1.119ZM120.428 11.047h1.108v3.102h.089a1.744 1.744 0 0 1 1.727-1.009 1.874 1.874 0 0 1 1.473.594c.377.405.553.957.479 1.505v3.634h-1.12v-3.36c0-.9-.421-1.355-1.211-1.355a1.33 1.33 0 0 0-1.048.384 1.308 1.308 0 0 0-.379 1.043v3.288h-1.118v-7.826Z" fill="#fff"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M129.369 18.982a2.299 2.299 0 0 0 2.455-1.629h-1.076a1.36 1.36 0 0 1-1.348.683 1.504 1.504 0 0 1-1.114-.475 1.48 1.48 0 0 1-.395-1.138v-.062h4.001v-.388c0-1.767-.951-2.837-2.528-2.837a2.62 2.62 0 0 0-1.981.878 2.58 2.58 0 0 0-.631 2.063 2.543 2.543 0 0 0 .631 2.054c.504.56 1.231.87 1.986.85Zm1.384-3.443h-2.862a1.436 1.436 0 0 1 .424-1.036 1.453 1.453 0 0 1 1.043-.422 1.37 1.37 0 0 1 1.022.423c.266.277.401.653.373 1.035Z" fill="#fff"></path></svg></a></div><div class="flex-none pb-2"><a href="https://play.google.com/store/apps/details?id=sg.ndi.sp&amp;hl=en-GB" aria-label="Google Play" target="_blank" rel="noreferrer"><svg width="170" height="50" viewBox="0 0 171 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M164.128 50H6.87C3.348 50 .58 47.25.58 43.75V6.25C.58 2.75 3.348 0 6.87 0h157.258c3.523 0 6.291 2.75 6.291 6.25v37.5c0 3.375-2.768 6.25-6.291 6.25Z" fill="#000"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.87 0h157.258c3.523 0 6.291 2.875 6.291 6.25v37.5c0 3.5-2.768 6.25-6.291 6.25H6.87C3.348 50 .58 47.25.58 43.75V6.25C.58 2.75 3.348 0 6.87 0Zm162.542 6.25c0-2.875-2.39-5.25-5.284-5.25H6.87C3.977 1 1.587 3.375 1.587 6.25v37.5c0 2.875 2.39 5.25 5.283 5.25h157.258c2.894 0 5.284-2.375 5.284-5.25V6.25Z" fill="#A6A6A6"></path><path d="M60.212 12.75c0 1-.251 1.875-.88 2.5-.755.75-1.636 1.125-2.768 1.125S54.551 16 53.796 15.25c-.755-.75-1.132-1.625-1.132-2.75s.377-2 1.132-2.75c.755-.75 1.636-1.125 2.768-1.125.503 0 1.007.125 1.51.375.503.25.88.5 1.132.875l-.629.625c-.503-.625-1.132-.875-2.013-.875-.755 0-1.51.25-2.013.875-.629.5-.88 1.25-.88 2.125s.251 1.625.88 2.125c.63.5 1.258.875 2.013.875.88 0 1.51-.25 2.139-.875.377-.375.629-.875.629-1.5h-2.768v-.875h3.648v.375ZM66 9.625h-3.397V12h3.145v.875h-3.145v2.375H66v1h-4.403v-7.5H66v.875ZM70.151 16.25h-1.006V9.625h-2.14V8.75h5.285v.875H70.15v6.625ZM75.939 16.25v-7.5h1.006v7.5h-1.006ZM81.222 16.25h-1.006V9.625h-2.139V8.75h5.158v.875h-2.138v6.625h.125Z" fill="#fff" stroke="#fff" stroke-width="0.625"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M90.406 16.375c1.132 0 2.013-.375 2.768-1.125.754-.75 1.132-1.625 1.132-2.75s-.378-2-1.132-2.75c-.755-.75-1.636-1.125-2.768-1.125S88.393 9 87.638 9.75c-.755.75-1.132 1.625-1.132 2.75s.377 2 1.132 2.75c.755.75 1.636 1.125 2.768 1.125Zm0-.875c-.755 0-1.51-.375-2.013-.875-.63-.5-.88-1.25-.88-2.125s.377-1.625.88-2.125c.503-.625 1.258-.875 2.013-.875.755 0 1.51.375 2.013.875.629.5.88 1.25.88 2.125s-.377 1.625-.88 2.125c-.503.625-1.258.875-2.013.875Z" fill="#fff"></path><path d="m88.393 14.625.22-.222-.012-.012-.014-.01-.194.244Zm0-4.25.22.222.013-.012.01-.014-.243-.196Zm4.026 0-.22.222.012.012.013.01.195-.244Zm0 4.25-.22-.222-.013.012-.01.014.243.196Zm.534.403c-.696.692-1.497 1.034-2.547 1.034v.625c1.214 0 2.174-.407 2.988-1.215l-.44-.444Zm1.04-2.528c0 1.042-.344 1.837-1.04 2.528l.44.444c.815-.809 1.225-1.764 1.225-2.972h-.625Zm-1.04-2.528c.696.691 1.04 1.486 1.04 2.528h.625c0-1.208-.41-2.163-1.224-2.972l-.44.444Zm-2.547-1.034c1.05 0 1.851.342 2.547 1.034l.44-.444c-.813-.808-1.773-1.216-2.987-1.216v.626Zm-2.548 1.034c.696-.692 1.498-1.034 2.548-1.034v-.626c-1.215 0-2.174.408-2.988 1.216l.44.444Zm-1.04 2.528c0-1.042.344-1.837 1.04-2.528l-.44-.444c-.814.809-1.225 1.764-1.225 2.972h.625Zm1.04 2.528c-.696-.691-1.04-1.486-1.04-2.528h-.625c0 1.208.411 2.163 1.225 2.972l.44-.444Zm2.548 1.034c-1.05 0-1.852-.342-2.548-1.034l-.44.444c.814.808 1.773 1.216 2.988 1.216v-.625Zm-2.233-1.215c.55.547 1.381.966 2.233.966v-.626c-.658 0-1.337-.33-1.793-.784l-.44.444ZM87.2 12.5c0 .933.27 1.79.998 2.37l.39-.49c-.53-.42-.763-1.063-.763-1.88H87.2Zm.973-2.347A3.319 3.319 0 0 0 87.2 12.5h.625c0-.784.338-1.456.788-1.903l-.44-.444Zm2.233-.966c-.82 0-1.678.273-2.256.992l.486.392c.428-.531 1.08-.758 1.77-.758v-.626Zm2.233.966c-.55-.547-1.381-.966-2.233-.966v.626c.658 0 1.337.33 1.792.784l.441-.444Zm.973 2.347c0-.933-.27-1.79-.999-2.37l-.389.49c.53.42.763 1.063.763 1.88h.625Zm-.973 2.347c.556-.553.973-1.38.973-2.347h-.625c0 .784-.338 1.456-.788 1.903l.44.444Zm-2.233.966c.82 0 1.677-.273 2.256-.992l-.487-.392c-.427.531-1.08.758-1.77.758v.626Z" fill="#fff"></path><path d="M95.69 16.25v-7.5h1.132l3.648 5.875V8.75h1.007v7.5h-1.007l-3.9-6.125v6.125h-.88Z" fill="#fff" stroke="#fff" stroke-width="0.625"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M60.59 28.875v2.25H66c-.126 1.25-.629 2.25-1.258 2.875-.755.75-2.013 1.625-4.152 1.625-3.396 0-5.913-2.625-5.913-6s2.642-6 5.913-6c1.762 0 3.145.75 4.152 1.625l1.635-1.625c-1.383-1.25-3.145-2.25-5.66-2.25-4.53 0-8.43 3.75-8.43 8.25s3.9 8.25 8.43 8.25c2.515 0 4.277-.75 5.786-2.375 1.51-1.5 2.013-3.625 2.013-5.25 0-.5 0-1-.126-1.375h-7.8Zm13.965-1.625c-3.02 0-5.41 2.25-5.41 5.375 0 3 2.39 5.375 5.41 5.375s5.41-2.25 5.41-5.375c0-3.25-2.39-5.375-5.41-5.375Zm6.29 5.375c0-3.125 2.39-5.375 5.41-5.375s5.41 2.125 5.41 5.375c0 3.125-2.39 5.375-5.41 5.375s-5.41-2.375-5.41-5.375Zm2.39-.125c0 1.875 1.384 3.25 3.02 3.25 1.635 0 3.02-1.375 3.02-3.25 0-2-1.385-3.25-3.02-3.25-1.636 0-3.02 1.375-3.02 3.25Zm-11.7 0c0 1.875 1.384 3.25 3.02 3.25 1.635 0 3.02-1.375 3.02-3.25 0-2-1.385-3.25-3.02-3.25-1.636 0-3.02 1.375-3.02 3.25Zm41.642-5.25c2.768 0 4.026 2.125 4.529 3.375l.252.625-7.171 3c.629 1.125 1.384 1.625 2.642 1.625s2.013-.625 2.642-1.5l1.761 1.25c-.503.875-2.013 2.375-4.403 2.375-3.019 0-5.284-2.375-5.284-5.375 0-3.25 2.265-5.375 5.032-5.375Zm-2.767 5.125c0-2 1.635-3.125 2.767-3.125.881 0 1.762.5 2.013 1.125l-4.78 2Zm-3.523 5.125h-2.39V21.875h2.39V37.5Zm-6.164-9.125c-.63-.625-1.636-1.25-2.894-1.25-2.642 0-5.158 2.375-5.158 5.375s2.39 5.25 5.158 5.25c1.258 0 2.264-.625 2.768-1.25h.126v.75c0 2-1.133 3.125-2.894 3.125-1.384 0-2.39-1-2.642-1.875l-2.013.875c.63 1.375 2.139 3.125 4.78 3.125 2.769 0 5.033-1.625 5.033-5.5v-9.5h-2.264v.875ZM94.935 32.5c0 1.875 1.384 3.25 3.02 3.25 1.635 0 2.893-1.375 2.893-3.25s-1.258-3.25-2.893-3.25c-1.636 0-3.02 1.375-3.02 3.25Zm33.717-10.625h-5.662V37.5h2.391v-5.875h3.271c2.642 0 5.158-1.875 5.158-4.875s-2.516-4.875-5.158-4.875Zm-3.271 7.5h3.396c1.636 0 2.642-1.375 2.768-2.75 0-1.125-1.006-2.625-2.768-2.625h-3.396v5.375Zm17.864-2.25c-1.761 0-3.522.75-4.151 2.375l2.138.875c.504-.875 1.258-1.125 2.139-1.125 1.258 0 2.39.75 2.516 2v.125c-.377-.25-1.384-.625-2.39-.625-2.265 0-4.529 1.25-4.529 3.5 0 2.125 1.887 3.5 3.9 3.5 1.635 0 2.39-.75 3.019-1.5h.126v1.25h2.264v-6c-.251-2.75-2.39-4.375-5.032-4.375Zm-2.139 7.25c0 1 1.133 1.375 1.888 1.375 1.258 0 2.516-1 2.767-2.5l-.187-.075c-.549-.223-1.047-.425-1.951-.425-1.133 0-2.517.375-2.517 1.625Zm15.097-6.875-2.642 6.75h-.126l-2.767-6.75h-2.516l4.151 9.5-2.39 5.25h2.39l6.416-14.75h-2.516Zm-18.745 10h-2.39V21.875h2.39V37.5Z" fill="#fff"></path><path d="M13.664 9.375c-.377.375-.629 1-.629 1.75V38.75c0 .75.252 1.375.63 1.75l.125.125 15.6-15.5v-.25l-15.726-15.5Z" fill="url(#paint0_linear)"></path><path d="M34.548 30.375 29.39 25.25v-.375l5.158-5.125.125.125 6.165 3.5c1.761 1 1.761 2.625 0 3.625l-6.29 3.375Z" fill="url(#paint1_linear)"></path><path d="M34.674 30.25 29.39 25 13.664 40.625c.63.625 1.51.625 2.642.125l18.368-10.5Z" fill="url(#paint2_linear)"></path><path d="M34.674 19.75 16.306 9.377c-1.132-.625-2.013-.5-2.642.125L29.39 25l5.284-5.25Z" fill="url(#paint3_linear)"></path><path opacity="0.2" d="m34.548 30.125-18.242 10.25c-1.007.625-1.887.5-2.516 0l-.126.125.126.125c.629.5 1.51.625 2.516 0l18.242-10.5Z" fill="#000"></path><path opacity="0.12" d="M13.664 40.375c-.377-.375-.503-1-.503-1.75v.125c0 .75.252 1.375.63 1.75v-.125h-.127ZM40.838 26.625l-6.29 3.5.126.125 6.164-3.5c.88-.5 1.258-1.125 1.258-1.75 0 .625-.503 1.125-1.258 1.625Z" fill="#000"></path><path opacity="0.25" d="M16.306 9.5 40.84 23.375c.754.5 1.258 1 1.258 1.625 0-.625-.378-1.25-1.258-1.75L16.306 9.375c-1.761-1-3.145-.125-3.145 1.876v.125c0-2 1.384-2.876 3.145-1.876Z" fill="#fff"></path><defs><linearGradient id="paint0_linear" x1="22.516" y1="-9.284" x2="-2.457" y2="-2.488" gradientUnits="userSpaceOnUse"><stop stop-color="#00A0FF"></stop><stop offset="0.007" stop-color="#00A1FF"></stop><stop offset="0.26" stop-color="#00BEFF"></stop><stop offset="0.512" stop-color="#00D2FF"></stop><stop offset="0.76" stop-color="#00DFFF"></stop><stop offset="1" stop-color="#00E3FF"></stop></linearGradient><linearGradient id="paint1_linear" x1="43.146" y1="12.337" x2="12.705" y2="12.337" gradientUnits="userSpaceOnUse"><stop stop-color="#FFE000"></stop><stop offset="0.409" stop-color="#FFBD00"></stop><stop offset="0.775" stop-color="orange"></stop><stop offset="1" stop-color="#FF9C00"></stop></linearGradient><linearGradient id="paint2_linear" x1="13.265" y1="16.892" x2="-6.63" y2="50.511" gradientUnits="userSpaceOnUse"><stop stop-color="#FF3A44"></stop><stop offset="1" stop-color="#C31162"></stop></linearGradient><linearGradient id="paint3_linear" x1="1.439" y1="5.1" x2="10.253" y2="20.132" gradientUnits="userSpaceOnUse"><stop stop-color="#32A071"></stop><stop offset="0.069" stop-color="#2DA771"></stop><stop offset="0.476" stop-color="#15CF74"></stop><stop offset="0.801" stop-color="#06E775"></stop><stop offset="1" stop-color="#00F076"></stop></linearGradient></defs></svg></a></div><div class="flex-none"></a></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Carousel End -->
+
+
+    <!-- Service Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="d-flex py-5 px-4">
+                        <i class="fa fa-certificate fa-3x text-primary flex-shrink-0"></i>
+                        <div class="ps-4">
+                            <h5 class="mb-3">Quality Servicing</h5>
+                            <p>Diam dolor diam ipsum sit amet diam et eos erat ipsum</p>
+                            <a class="text-secondary border-bottom" href="">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="d-flex bg-light py-5 px-4">
+                        <i class="fa fa-users-cog fa-3x text-primary flex-shrink-0"></i>
+                        <div class="ps-4">
+                            <h5 class="mb-3">Expert Workers</h5>
+                            <p>Diam dolor diam ipsum sit amet diam et eos erat ipsum</p>
+                            <a class="text-secondary border-bottom" href="">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="d-flex py-5 px-4">
+                        <i class="fa fa-tools fa-3x text-primary flex-shrink-0"></i>
+                        <div class="ps-4">
+                            <h5 class="mb-3">Modern Equipment</h5>
+                            <p>Diam dolor diam ipsum sit amet diam et eos erat ipsum</p>
+                            <a class="text-secondary border-bottom" href="">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 pt-4" style="min-height: 400px;">
+                    <div class="position-relative h-100 wow fadeIn" data-wow-delay="0.1s">
+                        <img class="position-absolute img-fluid w-100 h-100" src="img/about.jpg" style="object-fit: cover;" alt="">
+                        <div class="position-absolute top-0 end-0 mt-n4 me-n4 py-4 px-5" style="background: rgba(0, 0, 0, .08);">
+                            <h1 class="display-4 text-white mb-0">15 <span class="fs-4">Years</span></h1>
+                            <h4 class="text-white">Experience</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h6 class="text-primary text-uppercase">// About Us //</h6>
+                    <h1 class="mb-4"><span class="text-primary">CarServ</span> Is The Best Place For Your Auto Care</h1>
+                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                    <div class="row g-4 mb-3 pb-3">
+                        <div class="col-12 wow fadeIn" data-wow-delay="0.1s">
+                            <div class="d-flex">
+                                <div class="bg-light d-flex flex-shrink-0 align-items-center justify-content-center mt-1" style="width: 45px; height: 45px;">
+                                    <span class="fw-bold text-secondary">01</span>
+                                </div>
+                                <div class="ps-3">
+                                    <h6>Professional & Expert</h6>
+                                    <span>Diam dolor diam ipsum sit amet diam et eos</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 wow fadeIn" data-wow-delay="0.3s">
+                            <div class="d-flex">
+                                <div class="bg-light d-flex flex-shrink-0 align-items-center justify-content-center mt-1" style="width: 45px; height: 45px;">
+                                    <span class="fw-bold text-secondary">02</span>
+                                </div>
+                                <div class="ps-3">
+                                    <h6>Quality Servicing Center</h6>
+                                    <span>Diam dolor diam ipsum sit amet diam et eos</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 wow fadeIn" data-wow-delay="0.5s">
+                            <div class="d-flex">
+                                <div class="bg-light d-flex flex-shrink-0 align-items-center justify-content-center mt-1" style="width: 45px; height: 45px;">
+                                    <span class="fw-bold text-secondary">03</span>
+                                </div>
+                                <div class="ps-3">
+                                    <h6>Awards Winning Workers</h6>
+                                    <span>Diam dolor diam ipsum sit amet diam et eos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="" class="btn btn-primary py-3 px-5">Read More<i class="fa fa-arrow-right ms-3"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Fact Start -->
+    <div class="container-fluid fact bg-dark my-5 py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
+                    <i class="fa fa-check fa-2x text-white mb-3"></i>
+                    <h2 class="text-white mb-2" data-toggle="counter-up">1234</h2>
+                    <p class="text-white mb-0">Years Experience</p>
+                </div>
+                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
+                    <i class="fa fa-users-cog fa-2x text-white mb-3"></i>
+                    <h2 class="text-white mb-2" data-toggle="counter-up">1234</h2>
+                    <p class="text-white mb-0">Expert Technicians</p>
+                </div>
+                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
+                    <i class="fa fa-users fa-2x text-white mb-3"></i>
+                    <h2 class="text-white mb-2" data-toggle="counter-up">1234</h2>
+                    <p class="text-white mb-0">Satisfied Clients</p>
+                </div>
+                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
+                    <i class="fa fa-car fa-2x text-white mb-3"></i>
+                    <h2 class="text-white mb-2" data-toggle="counter-up">1234</h2>
+                    <p class="text-white mb-0">Compleate Projects</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fact End -->
+
+
+    <!-- Service Start -->
+    <div class="container-xxl service py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-primary text-uppercase">// Our Services //</h6>
+                <h1 class="mb-5">Explore Our Services</h1>
+            </div>
+            <div class="row g-4 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="col-lg-4">
+                    <div class="nav w-100 nav-pills me-4">
+                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4 active" data-bs-toggle="pill" data-bs-target="#tab-pane-1" type="button">
+                            <i class="fa fa-car-side fa-2x me-3"></i>
+                            <h4 class="m-0">Diagnostic Test</h4>
+                        </button>
+                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4" data-bs-toggle="pill" data-bs-target="#tab-pane-2" type="button">
+                            <i class="fa fa-car fa-2x me-3"></i>
+                            <h4 class="m-0">Engine Servicing</h4>
+                        </button>
+                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-4" data-bs-toggle="pill" data-bs-target="#tab-pane-3" type="button">
+                            <i class="fa fa-cog fa-2x me-3"></i>
+                            <h4 class="m-0">Tires Replacement</h4>
+                        </button>
+                        <button class="nav-link w-100 d-flex align-items-center text-start p-4 mb-0" data-bs-toggle="pill" data-bs-target="#tab-pane-4" type="button">
+                            <i class="fa fa-oil-can fa-2x me-3"></i>
+                            <h4 class="m-0">Oil Changing</h4>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="tab-content w-100">
+                        <div class="tab-pane fade show active" id="tab-pane-1">
+                            <div class="row g-4">
+                                <div class="col-md-6" style="min-height: 350px;">
+                                    <div class="position-relative h-100">
+                                        <img class="position-absolute img-fluid w-100 h-100" src="img/service-1.jpg"
+                                            style="object-fit: cover;" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h3 class="mb-3">15 Years Of Experience In Auto Servicing</h3>
+                                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Quality Servicing</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Expert Workers</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Modern Equipment</p>
+                                    <a href="" class="btn btn-primary py-3 px-5 mt-3">Read More<i class="fa fa-arrow-right ms-3"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab-pane-2">
+                            <div class="row g-4">
+                                <div class="col-md-6" style="min-height: 350px;">
+                                    <div class="position-relative h-100">
+                                        <img class="position-absolute img-fluid w-100 h-100" src="img/service-2.jpg"
+                                            style="object-fit: cover;" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h3 class="mb-3">15 Years Of Experience In Auto Servicing</h3>
+                                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Quality Servicing</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Expert Workers</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Modern Equipment</p>
+                                    <a href="" class="btn btn-primary py-3 px-5 mt-3">Read More<i class="fa fa-arrow-right ms-3"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab-pane-3">
+                            <div class="row g-4">
+                                <div class="col-md-6" style="min-height: 350px;">
+                                    <div class="position-relative h-100">
+                                        <img class="position-absolute img-fluid w-100 h-100" src="img/service-3.jpg"
+                                            style="object-fit: cover;" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h3 class="mb-3">15 Years Of Experience In Auto Servicing</h3>
+                                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Quality Servicing</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Expert Workers</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Modern Equipment</p>
+                                    <a href="" class="btn btn-primary py-3 px-5 mt-3">Read More<i class="fa fa-arrow-right ms-3"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab-pane-4">
+                            <div class="row g-4">
+                                <div class="col-md-6" style="min-height: 350px;">
+                                    <div class="position-relative h-100">
+                                        <img class="position-absolute img-fluid w-100 h-100" src="img/service-4.jpg"
+                                            style="object-fit: cover;" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h3 class="mb-3">15 Years Of Experience In Auto Servicing</h3>
+                                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Quality Servicing</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Expert Workers</p>
+                                    <p><i class="fa fa-check text-success me-3"></i>Modern Equipment</p>
+                                    <a href="" class="btn btn-primary py-3 px-5 mt-3">Read More<i class="fa fa-arrow-right ms-3"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+
+    <!-- Booking Start -->
+    <div class="container-fluid bg-secondary booking my-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-6 py-5">
+                    <div class="py-5">
+                        <h1 class="text-white mb-4">Certified and Award Winning Car Repair Service Provider</h1>
+                        <p class="text-white mb-0">Eirmod sed tempor lorem ut dolores. Aliquyam sit sadipscing kasd ipsum. Dolor ea et dolore et at sea ea at dolor, justo ipsum duo rebum sea invidunt voluptua. Eos vero eos vero ea et dolore eirmod et. Dolores diam duo invidunt lorem. Elitr ut dolores magna sit. Sea dolore sanctus sed et. Takimata takimata sanctus sed.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="bg-primary h-100 d-flex flex-column justify-content-center text-center p-5 wow zoomIn" data-wow-delay="0.6s">
+                        <h1 class="text-white mb-4">Book For A Service</h1>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="Your Name" style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="email" class="form-control border-0" placeholder="Your Email" style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <select class="form-select border-0" style="height: 55px;">
+                                        <option selected>Select A Service</option>
+                                        <option value="1">Service 1</option>
+                                        <option value="2">Service 2</option>
+                                        <option value="3">Service 3</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="date" id="date1" data-target-input="nearest">
+                                        <input type="text"
+                                            class="form-control border-0 datetimepicker-input"
+                                            placeholder="Service Date" data-target="#date1" data-toggle="datetimepicker" style="height: 55px;">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control border-0" placeholder="Special Request"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-secondary w-100 py-3" type="submit">Book Now</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Booking End -->
+
+
+    <!-- Team Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-primary text-uppercase">// Our Technicians //</h6>
+                <h1 class="mb-5">Our Expert Technicians</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/team-1.jpg" alt="">
+                            <div class="team-overlay position-absolute start-0 top-0 w-100 h-100">
+                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="bg-light text-center p-4">
+                            <h5 class="fw-bold mb-0">Full Name</h5>
+                            <small>Designation</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/team-2.jpg" alt="">
+                            <div class="team-overlay position-absolute start-0 top-0 w-100 h-100">
+                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="bg-light text-center p-4">
+                            <h5 class="fw-bold mb-0">Full Name</h5>
+                            <small>Designation</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/team-3.jpg" alt="">
+                            <div class="team-overlay position-absolute start-0 top-0 w-100 h-100">
+                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="bg-light text-center p-4">
+                            <h5 class="fw-bold mb-0">Full Name</h5>
+                            <small>Designation</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="team-item">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/team-4.jpg" alt="">
+                            <div class="team-overlay position-absolute start-0 top-0 w-100 h-100">
+                                <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="bg-light text-center p-4">
+                            <h5 class="fw-bold mb-0">Full Name</h5>
+                            <small>Designation</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+
+    <!-- Testimonial Start -->
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="text-center">
+                <h6 class="text-primary text-uppercase">// Testimonial //</h6>
+                <h1 class="mb-5">Our Clients Say!</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel position-relative">
+                <div class="testimonial-item text-center">
+                    <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="img/testimonial-1.jpg" style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">Client Name</h5>
+                    <p>Profession</p>
+                    <div class="testimonial-text bg-light text-center p-4">
+                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center">
+                    <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="img/testimonial-2.jpg" style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">Client Name</h5>
+                    <p>Profession</p>
+                    <div class="testimonial-text bg-light text-center p-4">
+                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center">
+                    <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="img/testimonial-3.jpg" style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">Client Name</h5>
+                    <p>Profession</p>
+                    <div class="testimonial-text bg-light text-center p-4">
+                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center">
+                    <img class="bg-light rounded-circle p-2 mx-auto mb-3" src="img/testimonial-4.jpg" style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">Client Name</h5>
+                    <p>Profession</p>
+                    <div class="testimonial-text bg-light text-center p-4">
+                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+
+   <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Singpass</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Contact us|Share feedback|Read FAQs</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>Report Vulnerability|Privacy statement|Term of use|Sitemap|Rate this website</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">2023 Government of Singapore</a>
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        <p>Last updated on 4 December 2022</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

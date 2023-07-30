@@ -1,0 +1,74 @@
+{% extends "bootstrap/base.html" %}
+
+{% block content %}
+<div class="container bg-dark text-white">
+  <div class="row justify-content-center bg-dark text-white">
+    <div class="col-lg-12 bg-dark text-white">
+      <div class="jumbotron text-center p-4 bg-dark text-white">
+        <h2><strong> SINGPASS CAPTCHA </strong></h2>
+        <h4>PROOF THAT YOU ARE A HUMAN</h4>
+      </div>
+    </div>
+    <div class="col-lg-5">
+      <form>
+        <div>
+          <h4><strong>Follow the steps below to login!</strong></h4>
+          <ul>
+            <li>Download <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en&gl=US" target="_blank">Google Authenticator</a> on your mobile.</li>
+            <li>Create a new account with <strong>setup key</strong> method.</li>
+            <li>Provide the required details (Account name, secret key).</li>
+            <li>Select time-based authentication.</li>
+            <li>Click <strong>Add</strong> to get the otp.</li>
+            <li>Submit the generated otp in the <strong>Generated OTP</strong> textbox.</li>
+            <li>Click <strong>Authenticate User</strong> to login.</li>
+          </ul>
+        </div>
+        <div class="form-group">
+          <label for="secret">Secret Token</label>
+          <input type="text" class="form-control" id="secret" value="{{ secret }}" readonly>
+        </div>
+        <div class="text-center">
+          <button type="button" class="btn btn-primary" onclick="copySecret()">Copy Secret Token</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-lg-7">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      {% for category, message in messages %}
+      <div class="alert alert-{{ category }}" role="alert">
+        {{ message }}
+      </div>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+      <form method="POST">
+        <div class="form-group">
+          <label for="otp">Generated OTP</label>
+          <input type="hidden" name="secret" value="{{ secret }}" required>
+          <input type="number" class="form-control" id="otp" name="otp" required>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">Authenticate User</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  function copySecret() {
+    /* Get the text field */
+    var copyText = document.getElementById("secret");
+
+    /* Select the text field */
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+    /* Copy the text inside the text field */
+    document.execCommand("copy");
+
+    alert("Successfully copied TOTP secret token!");
+  }
+</script>
+{% endblock %}
